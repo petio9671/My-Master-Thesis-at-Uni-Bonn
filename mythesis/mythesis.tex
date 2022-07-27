@@ -1,4 +1,6 @@
 \documentclass[Master, ngerman, UKenglish]{scrbook}
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
 %------------------------------------------------------------------------------
 % This file contains a skeleton thesis for
 % a Physics or Astronomy Institute in the University of Bonn.
@@ -26,13 +28,18 @@
 %------------------------------------------------------------------------------
 % Glossary package
 % \usepackage[acronym,toc,nosuper]{glossaries}
+\usepackage{dsfont}
 % TikZ packages and libraries
-% \usepackage{tikz}
-% \usepackage{tikz-3dplot}
-% \usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\usepackage{tikz-feynman}
+    % tikz libraries
+    \usetikzlibrary{arrows,matrix,arrows.meta,shapes, patterns.meta}
 % \usetikzlibrary{positioning,shapes,arrows}
 % \usetikzlibrary{decorations.pathmorphing}
 % \usetikzlibrary{decorations.markings}
+
 \usepackage{thesis_defs}
 
 %------------------------------------------------------------------------------
