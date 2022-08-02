@@ -18,10 +18,10 @@
 \section{The Hubbard Model}
 
 % Maybe history
-The Hubbard model (HM) emerges as a simple solution to the many-body problem in solids. It is a theory that describes the interactions of fermions on lattices, where they can hop between neighboring sites. This model successfully describes the feromagnetic properties of materials with different strength correlations between electrons. % look-up if true and what to add as citation
+The Hubbard model (HM) emerges as a simple solution to the many-body problem in solids. It is a theory that describes the interactions of fermions on lattices, where they can hop between neighboring sites. This model successfully describes the ferromagnetic properties of materials with different strength correlations between electrons. % look-up if true and what to add as citation
 
-% Original Hubbard model hamiltonian (Tight-binding, interaction, Chemical potential)
-The tight-binding with on-site interaction hamiltonian desribes the hopping of the fermions between neighboring sites and the interaction of fermions
+% Original Hubbard model Hamiltonian (Tight-binding, interaction, Chemical potential)
+The tight-binding with on-site interaction Hamiltonian describes the hopping of the fermions between neighboring sites and the interaction of fermions
 \begin{equation}
     H = - \sum_{xy} \left( a^\dagger_{x,\uparrow} K_{xy} a_{y,\uparrow} + a^\dagger_{x,\downarrow} K_{xy} a_{y,\downarrow} \right) - \frac{1}{2} \sum_{x,y} \left( (n^\dagger_{x,\uparrow} - n^\dagger_{x,\downarrow}) V_{xy} (n^\dagger_{y,\uparrow} - n^\dagger_{y,\downarrow}) \right)
 \end{equation}
@@ -60,7 +60,7 @@ The convention for spin and charge that we use for the particles and holes opera
     \caption{Convention of charge ($Q$), spin ($S$), and third component of spin ($S^3$) used for creation and annihilation operators of particles and holes.}
     \label{tab:convention_operators}
 \end{table}
-Here $Q$, $S$, $S^3$ are the charge, spin, and the third component of the spin respectively. For the two-body correlators (discussed in Section \ref{sec:corr_func}), it is also convinient to know the quantum numbers for different combinations of particle and hole operators. In Table \ref{tab:ph-comb} is given a summary which will be useful in the next chapters. We notice that only the charge and $S^3$ are present in the table. This is due to $Q$ and $S^3$ being additive numbers, whereas the spin is not because two different spin values could have the same third component (ex. $S=0,1;S^3=0$).
+Here $Q$, $S$, $S^3$ are the charge, spin, and the third component of the spin respectively. For the two-body correlators (discussed in Section \ref{sec:corr_func}), it is also convenient to know the quantum numbers for different combinations of particle and hole operators. In Table \ref{tab:ph-comb} is given a summary which will be useful in the next chapters. We notice that only the charge and $S^3$ are present in the table. This is due to $Q$ and $S^3$ being additive numbers, whereas the spin is not because two different spin values could have the same third component (ex. $S=0,1;S^3=0$).
 \begin{table}[h]
     \centering
     \begin{tabular}{c|cc}
@@ -81,29 +81,29 @@ Here $Q$, $S$, $S^3$ are the charge, spin, and the third component of the spin r
     \label{tab:ph-comb}
 \end{table}
 
-% Particle-hole Hubbard hamiltonian
-We can now substitute the operators inside the hamiltonian with the ones in the new basis
+% Particle-hole Hubbard Hamiltonian
+We can now substitute the operators inside the Hamiltonian with the ones in the new basis
 \begin{equation}
     H = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y - h^\dagger_x K_{xy} h_y \right) + \frac{1}{2} \sum_{x,y} \left( (n^\dagger_{x,p} - n^\dagger_{x,h}) V_{xy} (n^\dagger_{y,p} - n^\dagger_{y,h}) \right),
 \end{equation}
 here we have added a new index to the number density operators which indicates whether particles or holes are counted.
 
-Finally, we can expand our hamiltonian with one more term which is called the chemical potential term, where $\mu$ is the chemical potential. It accounts for the change of the number of particles and holes
+Finally, we can expand our Hamiltonian with one more term, which is called the chemical potential term, where $\mu$ is the chemical potential. It accounts for the change of the number of particles and holes
 \begin{equation}
     H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + h^\dagger_x K_{xy} h_y \right) + \frac{1}{2}\sum_{xy} q_x V_{xy} q_y - \sum_{x} \mu_x q_x
 \end{equation}
 and we have introduced one more operator $q_x = n_{x,p} - n_{x,h}$. This is the charge operator that indicates the relative charge on each site. 
 
-The hamiltonian of this model for our ease can be devided into two parts -- the half-filling part of the whole hamiltonian and the chemical potential part. The former contains the kinetic and the interaction terms whereas the latter in made out of only the chemical term. In the case of bipartite lattices (Chapter "SYMMETRY"), we must be able to differentiate on which lattice sites the operators are. This could be done by modifying the transformation (\ref{eq:ph-switch}) to include site dependent sign $\sigma_k$ for holes
+The Hamiltonian of this model for our ease can be divided into two parts -- the half-filling part of the whole Hamiltonian and the chemical potential part. The former contains the kinetic and the interaction terms, whereas the latter in made out of only the chemical term. In the case of bipartite lattices (Chapter "SYMMETRY"), we must be able to differentiate on which lattice sites the operators are. This could be done by modifying the transformation (\ref{eq:ph-switch}) to include site dependent sign $\sigma_k$ for holes
 \begin{equation}
     H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y \right) + \frac{1}{2}\sum_{xy} q_x V_{xy} q_y - \sum_{x} \mu_x q_x.
 \end{equation}
 
-To get to the hamiltonian that we work with, we choose to have only contact interactions ($V_{xy} = U\delta_{xy}$). This means that the interactions are done only in the same site
+To get to the Hamiltonian that we work with, we choose to have only contact interactions ($V_{xy} = U\delta_{xy}$). This means that the interactions are done only in the same site
 \begin{equation}
     H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y \right) + \frac{U}{2}\sum_{xy} q^2_x - \sum_{x} \mu_x q_x.
 \end{equation}
-In this thesis work we sometimes work with the chemical potential and sometimes we set $\mu = 0$, depending on the symmetries that we use \cite{avoiding ergodicity}. On Figure \ref{fig:hub_scheme} is shown a schematic of the Hubbard model's hopping and interaction.
+In this thesis work we sometimes work with the chemical potential, and sometimes we set $\mu = 0$, depending on the symmetries that we use \cite{avoiding ergodicity}. On Figure \ref{fig:hub_scheme} is shown a schematic of the Hubbard model's hopping and interaction.
 \begin{figure}[h]
     \begin{center}
         \begin{tikzpicture}
@@ -135,9 +135,9 @@ In this thesis work we sometimes work with the chemical potential and sometimes 
     \end{center}
 \end{figure}
 % Problems
-The theory that we are working with as mentioned before is a model of the real physical systems. Even though the HM gives us good results, one must know some of the drawbacks of the model. One is that it neglects the long range part of the Coulomb forces. It is likely that significant effects are missed by this simplification [MOTT]. Another weakness of this model it has difficulties being applied to transition metals. And the Hubbard model cannot be exactly solved, so approximations must be used.
+The theory that we are working with as mentioned before is a model of the real physical systems. Even though the HM gives us good results, one must know some drawbacks of the model. One is that it neglects the long range part of the Coulomb forces. It is likely that significant effects are missed by this simplification [MOTT]. Another weakness of this model it has difficulties being applied to transition metals. And the Hubbard model cannot be exactly solved, so approximations must be used.
 
-Despite having these issues, the two-dimensional HM has showed promising results when applied to honeycomb lattices. The description of the electronic structure when applied resemble that of the carbon nano structures, such as graphene, carbon nano tubes, and ribbons.
+Despite having these issues, the two-dimensional HM has showed promising results when applied to honeycomb lattices. The description of the electronic structure when applied resembles that of the carbon nano structures, such as graphene, carbon nano tubes, and ribbons.
 % Examples of Hubbard model
 % Solutions to the model (Exact, not so exact)
 % Creation and annihilation operators convention
