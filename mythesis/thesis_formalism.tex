@@ -159,7 +159,55 @@ Despite having these issues, the two-dimensional HM has showed promising results
 
 \section{Corelation Functions}
 \label{sec:corr_func}
+
+The correlation functions (correlators) that we are interested in ($\langle \mathcal{O}_{x,t+\tau}\mathcal{O}^\dagger_{y,t} \rangle$), are called Eucledian correlators. They are defined as a thermal trace
+\begin{equation}
+    \langle \mathcal{O}_{x,t+\tau}\mathcal{O}_{y,t} \rangle = \frac{1}{\mathcal{Z}}tr\left[ \mathcal{O}_{x,t+\tau}\mathcal{O}_{y,t}\mathrm{e}^{-\beta H} \right],
+\end{equation}
+where the $\mathcal{O}$ operators could be operators that create or annihilate states (usually the adjoint operator creates the antistate), measure observables, or a combination of these; the labels $x$ and $y$ are there to indicate any set of labels, not just a position, $\mathcal{Z} = tr\left[ \mathrm{e}^{-\beta H} \right]$ is the partititon function, $\beta$ is the inverse temperature, and $H$ is a general Hamiltonian of a model. In our case model, the field operators create states with a set of quantum numbers that define it at some time $t$ and detroy the same states at a different time $t + \tau$. These operators can also be composite $\mathcal{O} = \mathcal{O'}_1\mathcal{O'}_2\hdots\mathcal{O'}_n$. We can make a time transformation (assuming the action is time-translation invariant), such that the source is at time zero and the sink is at time $\tau$. Then, we move to the Heisenberg picture, so the correlator becomes
+\begin{equation}
+    C_{xy}(\tau) := \langle \mathcal{O}_{x,\tau}\mathcal{O}_{y,0} \rangle = \frac{1}{\mathcal{Z}}tr\left[ \mathcal{O}_{x,\tau}\mathrm{e}^{-H\tau}\mathcal{O}_{y,0}\mathrm{e}^{-H(\beta - \tau)} \right]
+\end{equation}
+We drop the time labels that are on the operators, since we work with the Hubbard model and we can always make the time translation that we have discussed.
+
+In order to be able to extract energies from the correlators, we must first find the spectal decomposition. This could be done by inserting the identity operator $\mathds{1}$ written in terms of complete set of orthonormal basis
+\begin{equation}
+    \mathds{1} = \sum_\alpha | n \rangle \langle n |
+\end{equation}
+inbetween the operators of the expanded in the eigenbasis of the Hamiltonian thermal trace
+\begin{equation}
+    \begin{aligned}
+        C_{xy}(\tau) &= \frac{1}{\mathcal{Z}}tr\left[ \mathcal{O}_x\mathrm{e}^{-H\tau}\mathcal{O}_y\mathrm{e}^{-H(\beta - \tau)} \right] 
+        \\
+        &= \frac{1}{\mathcal{Z}}\sum_\alpha\langle \alpha | \mathcal{O}_x\mathrm{e}^{-H\tau}\mathcal{O}_y\mathrm{e}^{-H(\beta - \tau)} | \alpha \rangle 
+        \\
+        &= \frac{1}{\mathcal{Z}}\sum_{\alpha mnl} \langle \alpha | \mathcal{O}_x | m \rangle \langle m | \mathrm{e}^{-H\tau} | n \rangle \langle n | \mathcal{O}_y | l \rangle \langle l | \mathrm{e}^{-H(\beta - \tau)} | \alpha \rangle 
+        \\
+        &= \frac{1}{\mathcal{Z}}\sum_{\alpha mnl}\langle \alpha | \mathcal{O}_x | m \rangle \delta_{mn}\mathrm{e}^{-E_n\tau} \langle n | \mathcal{O}_y | l \rangle \delta_{l\alpha}\mathrm{e}^{-E_\alpha(\beta - \tau)}
+        \\
+        &= \frac{1}{\mathcal{Z}}\sum_{\alpha n}\langle \alpha | \mathcal{O}_x | n \rangle \langle n | \mathcal{O}_y | \alpha \rangle \mathrm{e}^{-E_n\tau} \mathrm{e}^{-E_\alpha(\beta - \tau)}
+        \\
+        &= \frac{1}{\mathcal{Z}}\sum_{\alpha n} \mathfrak{u}_{\alpha xn} \mathfrak{u}_{ ny\alpha} \mathrm{e}^{-E_n\tau} \mathrm{e}^{-E_\alpha(\beta - \tau)}
+        \\
+    \end{aligned}
+\end{equation}
+where $\mathfrak{u}_{\alpha xn}$ and $\mathfrak{u}_{ ny\alpha}$ are the overlap factors. In the limit $\beta \to \infty$, one of the exponents vanishes, meaning the lowest excited state dominates
+\begin{equation}
+    \lim_{\beta \to \infty} C_{xy}(\tau) = \sum_{n} \mathfrak{u}_{\Omega xn} \mathfrak{u}_{ ny\Omega} \mathrm{e}^{-\Delta E_n\tau}
+\end{equation}
+where $\Delta E_n = E_n - E_\Omega$, and $\Omega$ denotes the lowest energy state (vacuum state).
+
+Another way to express the two-point correlator is by using an Eucledian path integral
+\begin{equation}
+    C_{xy}(\tau) := \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle = \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:M[\phi]^{-1}_{(x,\tau),(y,0)}\mathrm{e}^{-S[\phi]} = \langle M[\phi]^{-1}_{(x,\tau),(y,0)} \rangle,
+\end{equation}
+where $a$,$a^\dagger$ are the fermionic ladder operators, $M[\phi]$ is the fermionic matrix, $S[\phi]$ is the Euclidean action, $\mathcal{D}\phi$ is the path integral measure, and $\mathcal{Z}$ is the partition function defined as
+\begin{equation}
+    \mathcal{Z} = \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}
+\end{equation}
+
 % One particle gap
+
 % Fermionic matrix (Path integral, Inversion)
 % Two particle gap
 % Exponential representation of the correlator
