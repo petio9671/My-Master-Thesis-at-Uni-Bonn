@@ -4,7 +4,7 @@
 \chapter{Theoretical Overview}
 \label{sec:theory}
 %==============================================================================
-
+\newcommand{\todo}[1]{\textbf{\color{red}TODO: #1}}
 \section{Excitons}
 
 % WAIT FOR TOM TO SEND PAPERS
@@ -190,21 +190,53 @@ inbetween the operators of the expanded in the eigenbasis of the Hamiltonian the
         &= \frac{1}{\mathcal{Z}}\sum_{\alpha n} \mathfrak{u}_{\alpha xn} \mathfrak{u}_{ ny\alpha} \mathrm{e}^{-E_n\tau} \mathrm{e}^{-E_\alpha(\beta - \tau)}
         \\
     \end{aligned}
+    \label{eq:fit_exponent}
 \end{equation}
 where $\mathfrak{u}_{\alpha xn}$ and $\mathfrak{u}_{ ny\alpha}$ are the overlap factors. In the limit $\beta \to \infty$, one of the exponents vanishes, meaning the lowest excited state dominates
 \begin{equation}
     \lim_{\beta \to \infty} C_{xy}(\tau) = \sum_{n} \mathfrak{u}_{\Omega xn} \mathfrak{u}_{ ny\Omega} \mathrm{e}^{-\Delta E_n\tau}
+    \label{eq:beta_lim}
 \end{equation}
 where $\Delta E_n = E_n - E_\Omega$, and $\Omega$ denotes the lowest energy state (vacuum state).
 
 Another way to express the two-point correlator is by using an Eucledian path integral
 \begin{equation}
-    C_{xy}(\tau) := \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle = \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:M[\phi]^{-1}_{(x,\tau),(y,0)}\mathrm{e}^{-S[\phi]} = \langle M[\phi]^{-1}_{(x,\tau),(y,0)} \rangle,
+    C_{xy}(\tau) = \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle = \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(\mathcal{O}_x\mathcal{O}^\dagger_y\right)_{Wick},
+    \label{eq:path-int}
 \end{equation}
-where $a$,$a^\dagger$ are the fermionic ladder operators, $M[\phi]$ is the fermionic matrix, $S[\phi]$ is the Euclidean action, $\mathcal{D}\phi$ is the path integral measure, and $\mathcal{Z}$ is the partition function defined as
+where $\mathcal{D}\phi$ is the path integral measure, $S[\phi]$ is the Euclidean action, $\mathcal{Z}$ is the partition function defined as
 \begin{equation}
-    \mathcal{Z} = \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}
+    \mathcal{Z} = \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]};
 \end{equation}
+the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) [GATRINGER WICK'S THEOREM]. As this is very important to the part where we generate data, we will explicitly work out two examples -- one for a one-body correlation function and other for a two-body correlator with two Wick contractions.
+
+\begin{itemize}
+    \item \textbf{One-body correlation function}\\
+    We start by substituting the general operator $\mathcal{O}$ with the particle ladder operator $p$ and their adjoints. Then, we construct the correlation function and use Wick's theorem to perform the contractions
+    \begin{equation}
+        \begin{aligned}
+            \langle p_{x}p^\dagger_{y} \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(p_{x}p^\dagger_{y}\right)_{Wick} 
+            \\
+            &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]} M[\phi]^{-1}_{(x,y)}
+        \end{aligned}
+    \end{equation}
+    where $x$,$y$ denote the position of the particle and $M[\phi]$ is the fermion matrix. The same derivation can be performed for $\langle h_xh^\dagger_y\rangle$.
+    
+    \item \textbf{Two-body correlation function}\\
+    In this example, we want to show what the Wick contractions are for composite operators. We start again by substituting the general operators from \ref{eq:path-int} with $pp$ and the adjoint. Then, we expand the $\left(\dots\right)_{Wick}$, and finally we substitute $M[\phi]^{-1}$ in each term
+    \begin{equation}
+        \begin{aligned}
+            \langle p_{1,x}p_{2,x'}p^\dagger_{3,y}p^\dagger_{4,y'} \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(p_{1,x}p_{2,x'}p^\dagger_{3,y}p^\dagger_{4,y'}\right)_{Wick} 
+            \\
+            &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(\wick{\c1 p_{1,x} \c2 p_{2,x'} \c2 p^\dagger_{3,y} \c1 p^\dagger_{4,y'} - \c3 p_{1,x} \c4 p_{2,x'} \c3 p^\dagger_{3,y} \c4 p^\dagger_{4,y'}}\right)_{Wick} 
+            \\
+            &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]} \left((M[\phi]^{-1}_{14})_{(x,y')}(M[\phi]^{-1}_{23})_{(x',y)} - (M[\phi]^{-1}_{13})_{(x,y)}(M[\phi]^{-1}_{24})_{(x',y')}\right)
+        \end{aligned}
+    \end{equation}
+    where the number labels indicate which operators are replaced with the fermion propagator; the relative minus sign between the terms is due to the odd permutation.
+\end{itemize}
+
+The representation of the correlation functions as path integral is as mentioned important to us because we have a way to generate the correlation functions. This is can be done by numerically solving the integrals using stochastic methods (SECTION HMC) for Gausian integration. Then, it is possible to extract the energies of the correlators if we fit \ref{eq:fit_exponent} for different $\beta$, and, finally, extrapolate to zero temperature (\ref{eq:beta_lim}). This will give us the result we are looking for.
 
 % One particle gap
 
