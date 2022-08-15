@@ -160,21 +160,21 @@ Despite having these issues, the two-dimensional HM has showed promising results
 \section{Corelation Functions}
 \label{sec:corr_func}
 
-The correlation functions (correlators) that we are interested in ($\langle \mathcal{O}_{x,t+\tau}\mathcal{O}^\dagger_{y,t} \rangle$), are called Eucledian correlators. They are defined as a thermal trace
+The correlation functions (correlators) that we are interested in ($\langle \mathcal{O}_{x,t+\tau}\mathcal{O}^\dagger_{y,t} \rangle$), are called Euclidean correlators. They are defined as a thermal trace
 \begin{equation}
     \langle \mathcal{O}_{x,t+\tau}\mathcal{O}_{y,t} \rangle = \frac{1}{\mathcal{Z}}tr\left[ \mathcal{O}_{x,t+\tau}\mathcal{O}_{y,t}\mathrm{e}^{-\beta H} \right],
 \end{equation}
-where the $\mathcal{O}$ operators could be operators that create or annihilate states (usually the adjoint operator creates the antistate), measure observables, or a combination of these; the labels $x$ and $y$ are there to indicate any set of labels, not just a position, $\mathcal{Z} = tr\left[ \mathrm{e}^{-\beta H} \right]$ is the partititon function, $\beta$ is the inverse temperature, and $H$ is a general Hamiltonian of a model. In our case model, the field operators create states with a set of quantum numbers that define it at some time $t$ and detroy the same states at a different time $t + \tau$. These operators can also be composite $\mathcal{O} = \mathcal{O'}_1\mathcal{O'}_2\hdots\mathcal{O'}_n$. We can make a time transformation (assuming the action is time-translation invariant), such that the source is at time zero and the sink is at time $\tau$. Then, we move to the Heisenberg picture, so the correlator becomes
+where the $\mathcal{O}$ operators could be operators that create or annihilate states (usually the adjoint operator creates the anti-state), measure observables, or a combination of these; the labels $x$ and $y$ are there to indicate any set of labels, not just a position, $\mathcal{Z} = tr\left[ \mathrm{e}^{-\beta H} \right]$ is the partition function, $\beta$ is the inverse temperature, and $H$ is a general Hamiltonian of a model. In our case model, the field operators create states with a set of quantum numbers that define it at some time $t$ and destroy the same states at a different time $t + \tau$. These operators can also be composite $\mathcal{O} = \mathcal{O'}_1\mathcal{O'}_2\hdots\mathcal{O'}_n$. We can make a time transformation (assuming the action is time-translation invariant), such that the source is at time zero and the sink is at time $\tau$. Then, we move to the Heisenberg picture, so the correlator becomes
 \begin{equation}
     C_{xy}(\tau) := \langle \mathcal{O}_{x,\tau}\mathcal{O}_{y,0} \rangle = \frac{1}{\mathcal{Z}}tr\left[ \mathcal{O}_{x,\tau}\mathrm{e}^{-H\tau}\mathcal{O}_{y,0}\mathrm{e}^{-H(\beta - \tau)} \right]
 \end{equation}
-We drop the time labels that are on the operators, since we work with the Hubbard model and we can always make the time translation that we have discussed.
+We drop the time labels that are on the operators, since we work with the Hubbard model, and we can always make the time translation that we have discussed.
 
-In order to be able to extract energies from the correlators, we must first find the spectal decomposition. This could be done by inserting the identity operator $\mathds{1}$ written in terms of complete set of orthonormal basis
+In order to be able to extract energies from the correlators, we must first find the spectral decomposition. This could be done by inserting the identity operator $\mathds{1}$ written in terms of complete set of orthonormal basis
 \begin{equation}
     \mathds{1} = \sum_\alpha | n \rangle \langle n |
 \end{equation}
-inbetween the operators of the expanded in the eigenbasis of the Hamiltonian thermal trace
+in between the operators of the expanded in the eigenbasis of the Hamiltonian thermal trace
 \begin{equation}
     \begin{aligned}
         C_{xy}(\tau) &= \frac{1}{\mathcal{Z}}tr\left[ \mathcal{O}_x\mathrm{e}^{-H\tau}\mathcal{O}_y\mathrm{e}^{-H(\beta - \tau)} \right] 
@@ -187,7 +187,7 @@ inbetween the operators of the expanded in the eigenbasis of the Hamiltonian the
         \\
         &= \frac{1}{\mathcal{Z}}\sum_{\alpha n}\langle \alpha | \mathcal{O}_x | n \rangle \langle n | \mathcal{O}_y | \alpha \rangle \mathrm{e}^{-E_n\tau} \mathrm{e}^{-E_\alpha(\beta - \tau)}
         \\
-        &= \frac{1}{\mathcal{Z}}\sum_{\alpha n} \mathfrak{u}_{\alpha xn} \mathfrak{u}_{ ny\alpha} \mathrm{e}^{-E_n\tau} \mathrm{e}^{-E_\alpha(\beta - \tau)}
+        &= \frac{1}{\mathcal{Z}}\sum_{\alpha n} \mathfrak{u}_{\alpha xn} \mathfrak{u}_{ ny\alpha} \mathrm{e}^{-E_n\tau} \mathrm{e}^{-E_\alpha(\beta - \tau)},
         \\
     \end{aligned}
     \label{eq:fit_exponent}
@@ -199,7 +199,7 @@ where $\mathfrak{u}_{\alpha xn}$ and $\mathfrak{u}_{ ny\alpha}$ are the overlap 
 \end{equation}
 where $\Delta E_n = E_n - E_\Omega$, and $\Omega$ denotes the lowest energy state (vacuum state).
 
-Another way to express the two-point correlator is by using an Eucledian path integral
+Another way to express the two-point correlator is by using a Euclidean path integral
 \begin{equation}
     C_{xy}(\tau) = \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle = \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(\mathcal{O}_x\mathcal{O}^\dagger_y\right)_{Wick},
     \label{eq:path-int}
@@ -208,7 +208,7 @@ where $\mathcal{D}\phi$ is the path integral measure, $S[\phi]$ is the Euclidean
 \begin{equation}
     \mathcal{Z} = \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]};
 \end{equation}
-the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) [GATRINGER WICK'S THEOREM]. As this is very important to the part where we generate data, we will explicitly work out two examples -- one for a one-body correlation function and other for a two-body correlator with two Wick contractions.
+the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) [GATRINGER WICK'S THEOREM]. As this is very important to the part where we generate data, we will explicitly work out two examples -- one for a one-body correlation function and the other for a two-body correlator with two Wick contractions.
 
 \begin{itemize}
     \item \textbf{One-body correlation function}\\
@@ -217,7 +217,7 @@ the label $Wick$ indicates that all possible Wick contractions must be performed
         \begin{aligned}
             \langle p_{x}p^\dagger_{y} \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(p_{x}p^\dagger_{y}\right)_{Wick} 
             \\
-            &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]} M[\phi]^{-1}_{(x,y)}
+            &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]} M[\phi]^{-1}_{(x,y)},
         \end{aligned}
     \end{equation}
     where $x$,$y$ denote the position of the particle and $M[\phi]$ is the fermion matrix. The same derivation can be performed for $\langle h_xh^\dagger_y\rangle$.
@@ -236,7 +236,7 @@ the label $Wick$ indicates that all possible Wick contractions must be performed
     where the number labels indicate which operators are replaced with the fermion propagator; the relative minus sign between the terms is due to the odd permutation.
 \end{itemize}
 
-The representation of the correlation functions as path integral is as mentioned important to us because we have a way to generate the correlation functions. This is can be done by numerically solving the integrals using stochastic methods (SECTION HMC) for Gausian integration. Then, it is possible to extract the energies of the correlators if we fit \ref{eq:fit_exponent} for different $\beta$, and, finally, extrapolate to zero temperature (\ref{eq:beta_lim}). This will give us the result we are looking for.
+The representation of the correlation functions as path integral is as mentioned important to us because we have a way to generate the correlation functions. This can be done by numerically solving the integrals using stochastic methods (SECTION HMC) for Gausian integration. Then, it is possible to extract the energies of the correlators if we fit \ref{eq:fit_exponent} for different $\beta$ and volumes, and, finally, extrapolate to zero temperature (\ref{eq:beta_lim}) and infinite volume. This will give us the result we are looking for.
 
 % One particle gap
 
