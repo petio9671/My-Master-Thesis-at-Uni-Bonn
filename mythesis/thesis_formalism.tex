@@ -140,8 +140,20 @@ The theory that we are working with as mentioned before is a model of the real p
 Despite having these issues, the two-dimensional HM has showed promising results when applied to honeycomb lattices. The description of the electronic structure when applied resembles that of the carbon nano structures, such as graphene, carbon nano tubes, and ribbons.
 % Examples of Hubbard model
 % Solutions to the model (Exact, not so exact)
-% Creation and annihilation operators convention
 
+% The next part should be tested more
+An exact solution to the Hubbard model Hamiltonian exists in the non-interacting case at half filling. Even though, the data and analysis are done with the full Hamiltonian, it is always helpful to know the behavior of the model in the non-interacting case. Since we are applying HM on the hexagonal lattice (see section LATTICE) in this work, we have the following two-band dispersion relation
+\begin{equation}
+    E_{\vec{k}\pm} = \pm (-\kappa) \sqrt{3 + 2 \left( \cos\left( \frac{3}{2}k_x + \frac{\sqrt{3}}{2}k_y \right) + \cos\left( \frac{3}{2}k_x - \frac{\sqrt{3}}{2}k_y \right) + \cos\left( \sqrt{3}k_y \right) \right)},
+\end{equation}
+where $k$ is the momentum mode and $\kappa$ is the hopping parameter. In Figure \ref{fig:two-band}, it is shown how the exact solution of the band structure looks like for infinite and finite volue lattices. We expet to keep the two-band structure, even if we add the interaction term and chemical potential term. One notices that for infinite lattice volume the momentum modes are continuously filled, and the model gets the full symmetry of the lattice. Whereas in the finite volume regime only a finite number of momentum modes are available to us. The symmetry is also kept in the finite volume regime with lattices that have $L_1 = L_2$; and for every other configuration of hexagonal lattice, the full symmetry is broken to other symmetries. So, we must add a label to the ladder operators indicating the band that they are applied to. For further information on the symmetries of the lattice and model see section LATTICE.
+% Creation and annihilation operators convention
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=0.5\linewidth]{two-band-structure.png}}
+    % \centerline{\includegraphics[width=0.7\linewidth]{band_structure.png}}
+    \caption{The noninteracting one-body spectrum on the honeycomb lattice. The BZ is shown as a black hexagon, while the red spheres are the momenta allowed on a $L_1 = 6$, $L_2 = 6$ lattice and the orange and blue spheres are the corresponding non-interacting energies. [EVAN'S PAPER]}
+    \label{fig:two-band}
+\end{figure}
 
 \section{HMC}
 
