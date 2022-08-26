@@ -4,7 +4,11 @@
 \chapter{Methods}
 \label{sec:methods}
 %==============================================================================
-
+% History
+% Pros & Cons
+% Ergodisity (Avoiding problems)
+% Application of HMC onto the lattice
+% Bootstrap
 \section{Hybrid Monte Carlo}
 % MCMC
 %% Why these algos are better that a MC
@@ -15,7 +19,7 @@
 %% Leapfrog integrator
 % Metropolis Hastings
 % Summary of the algo
-The Hybrid (Hamiltonian) Monte Carlo (HMC) algorithm is the workhorse of modern Lattice QCD simulations and other Hamiltonian theories. This is due to the difficulty of simulating fermions with their anti-commuting nature using standard Monte Carlo (MC) methods. The major advantage of HMC over other methods is that this algorithm updates the system globally instead of the local updates that standard MC methods use. Moreover, the method is exact, meaning it does not have and truncation errors and the ensemble averages do not depend on the integration step size. These two advantages reduce the critical slowing down from which the other MC methods suffer. In the following subsections we will discuss in some detail the individual methods and algorithms that are involved in the creation of HMC.
+The Hybrid (Hamiltonian) Monte Carlo (HMC) algorithm is the workhorse of modern Lattice QCD simulations and other Hamiltonian theories~\cite{hmccm}. This is due to the difficulty of simulating fermions with their anti-commuting nature using standard Monte Carlo (MC) methods. The major advantage of HMC over other methods is that this algorithm updates the system globally instead of the local updates that standard MC methods use. Moreover, the method is exact, meaning it does not have and truncation errors and the ensemble averages do not depend on the integration step size. These two advantages reduce the critical slowing down from which the other MC methods suffer. In the following subsections we will discuss in some detail the individual methods and algorithms that are involved in the creation of HMC.
 
 \subsection{Markov Chain Monte Carlo}
 
@@ -42,9 +46,9 @@ And in the limit of $N \to \infty$, we get the relation
     \overline{\mathcal{O}} = \langle\mathcal{O}\rangle + \mathrm{O}(1/\sqrt{N})
 \end{equation}
 
-Making simulations by sampling directly from distributions could prove very costly and practically impossible. This is because the phase space of the target distribution might be too big to explore it all (curse of dimensionality). A much better way to explore the phase space is by progressively uncovering the regions of interest, which could be done by the use of Markov Chain.
+Making simulations by sampling directly from distributions could prove very costly and practically impossible. This is because the phase space of the target distribution might be too big to explore it all (curse of dimensionality). A much better way to explore the phase space is by progressively uncovering the regions of interest~\cite{mhexpl}, which could be done by the use of Markov Chain.
 
-The Markov Chain is defined as a sequence of random variables $X_n$, where every next element is generated from the previous element in the chain by a transition matrix $P_{ii+1}$
+The Markov Chain~\cite{intromarkov} is defined as a sequence of random variables $X_n$, where every next element is generated from the previous element in the chain by a transition matrix $P_{ii+1}$
 \begin{equation}
     X_0 \xrightarrow{P_{01}} X_1 \xrightarrow{P_{12}} X_2 \xrightarrow{P_{23}} \cdots \xrightarrow{P_{n-1n}} X_n
 \end{equation}
@@ -57,7 +61,7 @@ All Monte Carlo algorithm that use this method of random variable sampling are c
 
 \subsection{Hamilton Dynamics}
 
-The proposed updates to the system that we work with, must not change the energy. This is exactly what the Hamilton dynamics do, they preserve the Hamiltonian (the energy of the system). Therefore, we define Hamiltonian dynamics to evolve our $\phi(\tau)$, where $\tau$ is an evolution parameter. We introduce conjugate momenta $\pi(\tau)$ and a Hamiltonian 
+The proposed updates to the system that we work with, must not change the energy. This is exactly what the Hamilton dynamics do. They preserve the Hamiltonian (the energy of the system). Therefore, we define Hamiltonian dynamics to evolve our $\phi(\tau)$, where $\tau$ is an evolution parameter~\cite{hmc}. We introduce conjugate momenta $\pi(\tau)$ and a Hamiltonian 
 \begin{equation}
     H(\phi,\pi) \equiv \frac{1}{2}\pi^2 + S(\phi),
 \end{equation}
@@ -92,7 +96,7 @@ On Figure \ref{fig:leapfrog} is show a schematic view of the leapfrog integratio
 
 \subsection{Metropolis-Hastings}
 
-A Metropolis-Hastings accept/reject algorithm is used to construct a Markov chain with a stationary distribution $p(X)$. This is done by having a candidate element with transition probability $P_{acc}$. The accepted proposal is the new element of the chain, but if it is rejected the old element becomes the new one. This algorithm preserves the stationary distribution if the chain is irreducible.
+A Metropolis-Hastings accept/reject algorithm~\cite{mhog, mhexpl} is used to construct a Markov chain with a stationary distribution $p(X)$. This is done by having a candidate element with transition probability $P_{acc}$. The accepted proposal is the new element of the chain, but if it is rejected the old element becomes the new one. This algorithm preserves the stationary distribution if the chain is irreducible.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=0.5\linewidth]{
@@ -109,7 +113,7 @@ where $\delta H = H' - H$ is the difference of the final and the starting Hamilt
 
 \subsection{Summary of the Algorithm}
 
-We have discussed until now how we compute numerically the expectation value (\ref{eq:ensamble_average}) of an observable using MC algorithms. We also saw a better approach to draw from distributions that are difficult to sample using MCMC methods. This approach uses proposed elements which construct a Markov chain. These candidates can be found by leveraging the Hamilton dynamics and can be accepted with a probability $P_{acc}$. All of these methods culminate in the HMC algorithm, which is summarized in Algorithm (\ref{alg:hmc})
+We have discussed until now how we compute numerically the expectation value (\ref{eq:ensamble_average}) of an observable using MC algorithms. We also saw a better approach to draw from distributions that are difficult to sample using MCMC methods. This approach uses proposed elements which construct a Markov chain. These candidates can be found by leveraging the Hamilton dynamics and can be accepted with a probability $P_{acc}$. All of these methods culminate in the HMC algorithm~\cite{hmc}, which is summarized in Algorithm (\ref{alg:hmc})
 
 \begin{algorithm}
     \caption{Hybrid Monte Carlo}
@@ -137,12 +141,12 @@ We have discussed until now how we compute numerically the expectation value (\r
 
 \section{Linear Solvers}
 
-We saw in section (CORRELATION FUNCTIONS) that if we want to numerically compute the expectation value of the correlation functions, we must work with a lot of inverse matrices. Therefore, we must find a method for inverting matrices, which could be either a direct or an iterative method of solving linear systems of equations
+We saw in Section \ref{sec:corr_func} that if we want to numerically compute the expectation value of the correlation functions, we must work with a lot of inverse matrices. Therefore, we must find a method for inverting matrices, which could be either a direct or an iterative method of solving linear systems of equations
 \begin{equation}
     Ax = b
     \label{eq:lineq}
 \end{equation}
-In this work, we use the latter methods, namely the Flexible Generalized Minimum Residual (FGMRES) method. This method can be used for any invertible matrix, but it usually converges very slow. Some even make an analogy with a tank, because it is slow but robust and if there is a solution, it will find it. A solution to the speed of the algorithm is to use a preconditioner. We have chosen to use the Conjugate Gradient (CG) method. In the next subsections, we will discuss how both methods work. This includes the application of CG as a preconditioner to FGMRES.
+In this work, we use the latter methods, namely the Flexible Generalized Minimum Residual (FGMRES) method~\cite{fgmresart}. This method can be used for any invertible matrix, but it usually converges very slow. Some even make an analogy with a tank, because it is slow but robust and if there is a solution, it will find it. A solution to the speed of the algorithm is to use a preconditioner. We have chosen to use the Conjugate Gradient (CG) method~\cite{cgbook}. In the next subsections, we will discuss how both methods work. This includes the application of CG as a preconditioner to FGMRES.
 
 \subsection{Conjugate Gradient}
 
@@ -201,7 +205,7 @@ And the new solution can be found by
 \begin{equation}
     x_{k+1} = x_k + \alpha_k p_k
 \end{equation}
-A detailed derivation of CG can be found in [Y. SAAD]. The whole method can be implemented in an algorithm which can be written in pseudocode (Algorithm \ref{alg:cg}) like
+A detailed derivation of CG can be found in~\cite{cgbook}. The whole method can be implemented in an algorithm which can be written in pseudocode (Algorithm \ref{alg:cg}) like
 
 \begin{algorithm}
     \caption{Conjugate Gradient}
@@ -235,7 +239,7 @@ As it was written before, this method is robust but slow. So, in order to improv
 \begin{equation}
     AM^{-1}(Mx) = b,
 \end{equation}
-where $M$ is a matrix that can be found very easy with another algorithm by solving $Mz = v$. One could use a lot of different methods for preconditioning. They could be not only one-step methods but also iterative techniques like SSOR, ADI, CG, and even GMRES. The detailed derivation of the method can be found in [Y.SAAD], but here we can only show the general idea of the algorithm with a pseudocode (Algorithm \ref{alg:fgmres})
+where $M$ is a matrix that can be found very easy with another algorithm by solving $Mz = v$. One could use a lot of different methods for preconditioning. They could be not only one-step methods but also iterative techniques like SSOR, ADI, CG, and even GMRES. The detailed derivation of the method can be found in~\cite{fgmresart}, but here we can only show the general idea of the algorithm with a pseudocode (Algorithm \ref{alg:fgmres})
 
 \begin{algorithm}
     \caption{Flexible Generalized Minimum Residual}
