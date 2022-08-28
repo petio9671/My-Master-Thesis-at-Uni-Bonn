@@ -210,7 +210,7 @@ where $\mathfrak{u}_{\alpha xn}$ and $\mathfrak{u}_{ ny\alpha}$ are the overlap 
     \lim_{\beta \to \infty} C_{xy}(\tau) = \sum_{n} \mathfrak{u}_{\Omega xn} \mathfrak{u}_{ ny\Omega} \mathrm{e}^{-\Delta E_n\tau}
     \label{eq:beta_lim}
 \end{equation}
-where $\Delta E_n = E_n - E_\Omega$, and $\Omega$ denotes the lowest energy state (vacuum state).
+where $\Delta E_n = E_n - E_\Omega$, and $\Omega$ denotes the lowest energy state (vacuum state)~\cite{evan}.
 
 Another way to express the two-point correlator is by using a Euclidean path integral
 \begin{equation}
@@ -221,7 +221,7 @@ where $\mathcal{D}\phi$ is the path integral measure, $S[\phi]$ is the Euclidean
 \begin{equation}
     \mathcal{Z} = \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]};
 \end{equation}
-the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) [GATRINGER WICK'S THEOREM]. As this is very important to the part where we generate data, we will explicitly work out two examples -- one for a one-body correlation function and the other for a two-body correlator with two Wick contractions.
+the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) \cite{gattringer}. As this is very important to the part where we generate data, we will explicitly work out two examples -- one for a one-body correlation function and the other for a two-body correlator with two Wick contractions.
 
 \begin{itemize}
     \item \textbf{One-body correlation function}\\
@@ -249,7 +249,7 @@ the label $Wick$ indicates that all possible Wick contractions must be performed
     where the number labels indicate which operators are replaced with the fermion propagator; the relative minus sign between the terms is due to the odd permutation.
 \end{itemize}
 
-The representation of the correlation functions as path integral is as mentioned important to us because we have a way to generate the correlation functions. This can be done by numerically solving the integrals using stochastic methods (SECTION HMC) for Gausian integration. Then, it is possible to extract the energies of the correlators if we fit \ref{eq:fit_exponent} for different $\beta$ and volumes, and, finally, extrapolate to zero temperature (\ref{eq:beta_lim}) and infinite volume. This will give us the result we are looking for.
+The representation of the correlation functions as path integral is as mentioned important to us because we have a way to generate the correlation functions. This can be done by numerically solving the integrals using stochastic methods (see Section \ref{sec:hmc}) for Gausian integration. Then, it is possible to extract the energies of the correlators if we fit \ref{eq:fit_exponent} for different $\beta$ and volumes, and, finally, extrapolate to zero temperature (\ref{eq:beta_lim}) and infinite volume. This will give us the result we are looking for.
 
 % One particle gap
 
