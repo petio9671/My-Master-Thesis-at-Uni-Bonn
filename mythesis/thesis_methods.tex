@@ -90,7 +90,7 @@ and again half-step in $\pi$
 On Figure \ref{fig:leapfrog} is show a schematic view of the leapfrog integration process.
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=0.5\linewidth]{leapfrog.png}}
-    \caption{Leapfrog integration process. The scheme represents one integration trajectory. On each step of evolution, one of the variables lead the other by a half step, and they update each other. %https://www.researchgate.net/figure/Schematics-describing-how-the-leapfrog-algorithm-works-Position-and-velocity-leap-each_fig1_346972792}
+    \caption{Leapfrog integration process. The scheme represents one integration trajectory. On each step of evolution, one of the variables lead the other by a half step, and they update each other~\cite{pic-leapfrog}
     }
     \label{fig:leapfrog}
 \end{figure}
@@ -102,7 +102,7 @@ A Metropolis-Hastings accept/reject algorithm~\cite{mhog, mhexpl} is used to con
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=0.5\linewidth]{
         Metropolis-Hastings-MCMC.png}}
-    \caption{Metropolis-Hastings process for generating a Markov chain with a target distribution. The scheme represents the transition from an initial probability distribution to a target one. On each step, the accept/reject step is performed on the candidate element. The first element of the Markov chain is drawn from the starting distribution. The whole process is repeated until all sampled elements are representative of the new distribution. %https://www.researchgate.net/figure/Illustration-of-the-Markov-chain-Monte-Carlo-with-Metropolis-Hastings-MCMC-MH-procedure_fig6_338363810
+    \caption{Metropolis-Hastings process for generating a Markov chain with a target distribution. The scheme represents the transition from an initial probability distribution to a target one. On each step, the accept/reject step is performed on the candidate element. The first element of the Markov chain is drawn from the starting distribution. The whole process is repeated until all sampled elements are representative of the new distribution~\cite{pic-metro}.
     }
     \label{fig:mn-mcmc}
 \end{figure}
@@ -154,7 +154,7 @@ In this work, we use the latter methods, namely the Flexible Generalized Minimum
 Conjugate gradient is used as an iterative method of solving linear systems of equations that are too large to solve directly. And more precisely with real,  positive-definite usually with sparse matrices. The idea of the algorithm is to have a number of orthogonal search directions. And each search direction is explored fully before going to the next. This method can be viewed as an improved version of the gradient descent method, where the search is always done in the direction of the gradient. A comparison between the methods is shown on Figure \ref{fig:cg_comp}.
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=0.5\linewidth]{CG_comparison.png}}
-    \caption{Comparison between Conjugate gradient (red) and Gradient descent (green) methods. This is done with the same starting point and an optimal step size for the GD.}
+    \caption{Comparison between Conjugate gradient (red) and Gradient descent (green) methods. This is done with the same starting point and an optimal step size for the GD~\cite{pic-cg}.}
     \label{fig:cg_comp}
 \end{figure}
 
