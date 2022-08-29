@@ -6,6 +6,7 @@
 %==============================================================================
 \newcommand{\todo}[1]{\textbf{\color{red}TODO: #1}}
 
+\todo{Maybe add a few sentences before the sections}
 \section{Excitons}
 % Terminology
 An exciton is a bound state of electron and hole. This neutral quasi-particle is bosoniclike, meaning that it can occupy the same excitonic ground state. These composite particles are theorized to be formed when the binding energy of the electron-hole pair is bigger than the band gap. This results in an unstable ground state against spontaneous exciton generation (Fig. \ref{fig:exciton_gap}). It is worth noting that the ground state instability is important because the so called excitonic insulator is a candidate for observing a Bose-Einstein condensation transition~\cite{grossnev}. The excitons remind of the Cooper pairs (bound state of spin-up and spin-down electrons) used in describing superconductivity. Similarly, they form below a critical temperature and impose a quasi-particle gap~\cite{ctubes}. Unlike the Cooper pairs, they do not transport charge or mass but only energy~\cite{grossnev}. 
@@ -25,9 +26,9 @@ In recent years, there has been a renewed interest in investigating excitons due
 
 In this work, we apply the Hubbard model onto a hexagonal lattice which is a model of graphene (see Section \ref{sec:lattice}). We are looking for the appearance of an electron-hole bound state. This will be done by measuring the binding energy of the correlation functions ratio
 \begin{equation}
-    \epsilon = (E_e + E_h) - E_{e-h} = \ln\left( \frac{C_e(\tau)C_h(\tau)}{C_{e-h}(\tau)} \right)
+    \epsilon = E_{e-h} - (E_e + E_h)= \ln\left( \frac{C_{e-h}(\tau)}{C_e(\tau)C_h(\tau)} \right)
 \end{equation}
-The Hubbard model that we are applying there is not a mechanism for decay of the exciton state. This means that if the energy is negative ($\epsilon < 0$), we have a bound exciton state; and if the energy is higher than the energy threshold, then the particles are unbound. The study of a monolayer graphene sheets that we do in this thesis is a first step in the direction of future investigation of more complex graphene (and other) structures.
+The Hubbard model that we are applying does not have a mechanism for decay of the exciton state. This means that if the energy is negative ($\epsilon < 0$), we have a bound exciton state; and if the energy is higher than the energy threshold, then the particles are unbound. The study of a monolayer graphene sheets that we do in this thesis is a first step in the direction of future investigation of more complex graphene (and other) structures.
 
 \section{The Hubbard Model}
 
