@@ -6,7 +6,8 @@
 %==============================================================================
 \newcommand{\todo}[1]{\textbf{\color{red}TODO: #1}}
 
-\todo{Maybe add a few sentences before the sections}
+In this chapter, we will explore the definition of an exciton, the Hubbard theory, and correlation functions of fermionic operators, which are a center point in this thesis.
+
 \section{Excitons}
 % Terminology
 An exciton is a bound state of electron and hole. This neutral quasi-particle is bosoniclike, meaning that it can occupy the same excitonic ground state. These composite particles are theorized to be formed when the binding energy of the electron-hole pair is bigger than the band gap. This results in an unstable ground state against spontaneous exciton generation (Fig. \ref{fig:exciton_gap}). It is worth noting that the ground state instability is important because the so called excitonic insulator is a candidate for observing a Bose-Einstein condensation transition~\cite{grossnev}. The excitons remind of the Cooper pairs (bound state of spin-up and spin-down electrons) used in describing superconductivity. Similarly, they form below a critical temperature and impose a quasi-particle gap~\cite{ctubes}. Unlike the Cooper pairs, they do not transport charge or mass but only energy~\cite{grossnev}. 
@@ -26,7 +27,8 @@ In recent years, there has been a renewed interest in investigating excitons due
 
 In this work, we apply the Hubbard model onto a hexagonal lattice which is a model of graphene (see Section \ref{sec:lattice}). We are looking for the appearance of an electron-hole bound state. This will be done by measuring the binding energy of the correlation functions ratio
 \begin{equation}
-    \epsilon = E_{e-h} - (E_e + E_h)= \ln\left( \frac{C_{e-h}(\tau)}{C_e(\tau)C_h(\tau)} \right)
+    \Delta E = E_{e-h} - (E_e + E_h)
+    \label{eq:binding_energy}
 \end{equation}
 The Hubbard model that we are applying does not have a mechanism for decay of the exciton state. This means that if the energy is negative ($\epsilon < 0$), we have a bound exciton state; and if the energy is higher than the energy threshold, then the particles are unbound. The study of a monolayer graphene sheets that we do in this thesis is a first step in the direction of future investigation of more complex graphene (and other) structures.
 
@@ -117,6 +119,7 @@ The Hamiltonian of this model for our ease can be divided into two parts -- the 
 To get to the Hamiltonian that we work with, we choose to have only contact interactions ($V_{xy} = U\delta_{xy}$). This means that the interactions are done only in the same site
 \begin{equation}
     H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y \right) + \frac{U}{2}\sum_{xy} q^2_x - \sum_{x} \mu_x q_x.
+    \label{eq:hubbard_ham}
 \end{equation}
 In this thesis work we sometimes work with the chemical potential, and sometimes we set $\mu = 0$, depending on the symmetries that we use \cite{avoiding}. On Figure \ref{fig:hub_scheme} is shown a schematic of the Hubbard model's hopping and interaction.
 \begin{figure}[h]
@@ -177,6 +180,7 @@ where $k$ is the momentum mode and $\kappa$ is the hopping parameter. In Figure 
 The correlation functions (correlators) that we are interested in ($\langle \mathcal{O}_{x,t+\tau}\mathcal{O}^\dagger_{y,t} \rangle$), are called Euclidean correlators. They are defined as a thermal trace
 \begin{equation}
     \langle \mathcal{O}_{x,t+\tau}\mathcal{O}_{y,t} \rangle = \frac{1}{\mathcal{Z}}tr\left[ \mathcal{O}_{x,t+\tau}\mathcal{O}_{y,t}\mathrm{e}^{-\beta H} \right],
+    \label{eq:corr_trerm}
 \end{equation}
 where the $\mathcal{O}$ operators could be operators that create or annihilate states (usually the adjoint operator creates the anti-state), measure observables, or a combination of these; the labels $x$ and $y$ are there to indicate any set of labels, not just a position, $\mathcal{Z} = tr\left[ \mathrm{e}^{-\beta H} \right]$ is the partition function, $\beta$ is the inverse temperature, and $H$ is a general Hamiltonian of a model. In our case model, the field operators create states with a set of quantum numbers that define it at some time $t$ and destroy the same states at a different time $t + \tau$. These operators can also be composite $\mathcal{O} = \mathcal{O'}_1\mathcal{O'}_2\hdots\mathcal{O'}_n$. We can make a time transformation (assuming the action is time-translation invariant), such that the source is at time zero and the sink is at time $\tau$. Then, we move to the Heisenberg picture, so the correlator becomes
 \begin{equation}
@@ -213,16 +217,32 @@ where $\mathfrak{u}_{\alpha xn}$ and $\mathfrak{u}_{ ny\alpha}$ are the overlap 
 \end{equation}
 where $\Delta E_n = E_n - E_\Omega$, and $\Omega$ denotes the lowest energy state (vacuum state)~\cite{evan, mott}.
 
-Another way to express the two-point correlator is by using a Euclidean path integral
+Another way to express the two-point correlator is by transforming (\ref{eq:corr_trerm}) to a Euclidean path integral~\cite{discret1,discret2}. We start with representing the two-point correlation function as a path integral
 \begin{equation}
-    C_{xy}(\tau) = \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle = \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(\mathcal{O}_x\mathcal{O}^\dagger_y\right)_{Wick},
+    \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle = \frac{1}{Z} \int \mathcal{D}\psi\mathcal{D}\eta e^{-(\psi_\alpha\psi^*_\alpha + \eta_\alpha\eta^*_\alpha)} \langle -\psi,-\eta | \mathcal{O}_x\mathcal{O}^\dagger_y e^{-\beta H} | \psi,\eta \rangle
+\end{equation}
+Assuming $\beta$ to be a time extent, thus we can discretize it by separating it in small segments $\delta$
+\begin{equation}
+    e^{-\beta H} = e^{-\delta H}e^{-\delta H}\dots e^{-\delta H}\qquad(\delta = \frac{\beta}{Nt})
+\end{equation}
+Moreover, we want to discretize the Hamiltonian (\ref{eq:hubbard_ham}). Due to fermions obeying anti-commutation relations, we must use Grassman variables and the Hubbard-Stratonovich transformations to obtain
+\begin{equation}
+    \begin{aligned}
+        C_{xy}(\tau) = \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-\frac{\phi^2_t}{2\delta U}}\times \det(M[\phi])\det(M[-\phi]) \left(\mathcal{O}_x\mathcal{O}^\dagger_y\right)_{Wick}
+        \\
+        &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(\mathcal{O}_x\mathcal{O}^\dagger_y\right)_{Wick}
+    \end{aligned}
     \label{eq:path-int}
 \end{equation}
-where $\mathcal{D}\phi$ is the path integral measure, $S[\phi]$ is the Euclidean action, $\mathcal{Z}$ is the partition function defined as
+where $\mathcal{D}\phi$ is the path integral measure, $S[\phi]$ is the Euclidean action
+\begin{equation}
+    S[\phi] = \frac{\phi^2_t}{2\delta U} - \ln(\det(M[\phi])\det(M[-\phi])),
+\end{equation} 
+$\mathcal{Z}$ is the partition function defined as
 \begin{equation}
     \mathcal{Z} = \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]};
 \end{equation}
-the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) \cite{gattringer}. As this is very important to the part where we generate data, we will explicitly work out two examples -- one for a one-body correlation function and the other for a two-body correlator with two Wick contractions.
+the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) \cite{gattringer}. As this is very important to the part where we generate data, we will explicitly work out the examples with which will will work -- one for a one-body correlation function and the other two for a two-body correlator with one and two Wick contractions.
 
 \begin{itemize}
     \item \textbf{One-body correlation function}\\
@@ -245,6 +265,18 @@ the label $Wick$ indicates that all possible Wick contractions must be performed
             &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(\wick{\c1 p_{1,x} \c2 p_{2,x'} \c2 p^\dagger_{3,y} \c1 p^\dagger_{4,y'} - \c3 p_{1,x} \c4 p_{2,x'} \c3 p^\dagger_{3,y} \c4 p^\dagger_{4,y'}}\right)_{Wick} 
             \\
             &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]} \left((M[\phi]^{-1}_{14})_{(x,y')}(M[\phi]^{-1}_{23})_{(x',y)} - (M[\phi]^{-1}_{13})_{(x,y)}(M[\phi]^{-1}_{24})_{(x',y')}\right)
+        \end{aligned}
+    \end{equation}
+    where the number labels indicate which operators are replaced with the fermion propagator; the relative minus sign between the terms is due to the odd permutation.
+
+    The last example is simpler than the previous one because it has only one Wick contraction. We Similarly start by substituting the composite operators with $ph$ and the adjoint. Then, we expand the ${Wick}$ bracket, and finally we substitute $M[\phi]^{-1}$ in each term
+    \begin{equation}
+        \begin{aligned}
+            \langle p_{1,x}h_{2,x'}h^\dagger_{3,y}p^\dagger_{4,y'} \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(p_{1,x}h_{2,x'}h^\dagger_{3,y}p^\dagger_{4,y'}\right)_{Wick} 
+            \\
+            &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(\wick{\c1 p_{1,x} \c2 h_{2,x'} \c2 h^\dagger_{3,y} \c1 p^\dagger_{4,y'}}\right)_{Wick} 
+            \\
+            &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]} \left((M[\phi]^{-1}_{14})_{(x,y')}(M[-\phi]^{-1}_{23})_{(x',y)}\right)
         \end{aligned}
     \end{equation}
     where the number labels indicate which operators are replaced with the fermion propagator; the relative minus sign between the terms is due to the odd permutation.

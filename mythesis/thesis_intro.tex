@@ -5,51 +5,59 @@
 \label{sec:intro}
 %==============================================================================
 
-The introduction usually gives a few pages of introduction to the
-whole subject, maybe even starting with the Greeks.
+Ever since the discovery of graphene in 2004, scientist have tried to examine the properties of this new material. One direction of study are the excitonic insulators which were theorized to be emerging in these carbon nanostructures. The excitons have similarities with Cooper pairs, which are responsible for the super conductivity in materials, but excitons do not transfer charge. Physicists are nevertheless intrigued to study the properties of the bosoniclike particles. The properties of excitonic bound states can be used for the development of new-age devices i.e. for the development of topologically protected qubits, switching devices, and in heat exchangers 
 
-For more information on \LaTeX{} and the packages that are available
-see for example the books of Kopka%~\cite{kopka04}
- and Goossens et
-al%~\cite{goossens04}.
+Density functional theory (DFT) is the most widely used approach to tackle many-body problems in material science. It uses an accurate approximation for the exchange-correlation for the electron system. Another approach is to use Monte Carlo (MC) methods, and more precisely the Hybrid Monte Carlo (HMC) algorithm, which can be directly applied to the theory's Hamiltonian. Despite being the most used algorithm in modern lattice  QCD simulations, it has rarely being used in condensed matter.
 
-A lot of useful information on particle physics can be found in the
-\enquote{Particle Data Book}%~\cite{pdg2010}.
+The goal of this thesis is to estimate the ground binding energy of the exciton in graphene. We will apply the HMC algorithm on the Hubbard model in order to find the correlation functions representing the exciton and its free constituents. The simulation will be done on a bipartite hexagonal lattice which is a model of the real carbon mono-layered sheets. From the acquired correlators, we will be able to extract the binding energy of the quasi-particle. As the results are simulation dependent, we will try to find the temporal continuum limit and the infinite volume limit, so that the final results are independent of any discretization.
 
-I have resisted the temptation to put a lot of definitions into the
-file \texttt{thesis\_defs.sty}, as everyone has their own taste as
-to what scheme they want to use for names.
-However, a few examples are included to help you get started:
-\begin{itemize}
-\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
-\item cross-sections are measured in \si{\pb} and integrated
-  luminosity in \si{\invpb};
-\item the \KoS is an interesting particle;
-\item the missing transverse momentum, \pTmiss, is often called
-  missing transverse energy, even though it is calculated using a vector sum.
-\end{itemize}
-Note that the examples of units assume that you are using the
-\textsf{siunitx} package.
+The layout of thesis is organized as follows. In Chapter \ref{sec:theory}, we introduce the relevant theoretical background, including the definition of the exciton, an introduction to the Hubbard model, and the sought observables. We describe in Chapter \ref{sec:methods} the methods used for simulating the observables and extracting their binding energies, followed by an explanation in Chapter \ref{sec:symmetries} of the symmetries of the system and theory that will allow us to make our results more precise. In Chapter \ref{sec:excitons}, we first show an algorithm that generates one- and two-body correlation functions. Then we analyze the data and present the results for the binding energy. Finally, we discuss in Chapter \ref{sec:conclusion} the results and outline possible further research. There are additional results and detailed derivations provided in Appendix~\ref{sec:app} which are too large to be put in without interrupting the flow of the previous chapters.
 
-It also is probably a good idea to include a few well formatted
-references in the thesis skeleton. More detailed suggestions on what
-citation types to use can be found in the \enquote{Thesis Guide}%~\cite{thesis-guide}:
-\begin{itemize}
-\item articles in refereed journals%~\cite{pdg2010,Aad:2010ey};
-\item a book%~\cite{Halzen:1984mc};
-\item a PhD thesis%~\cite{tlodd:2012} and a Diplom thesis~\cite{mergelmeyer:2011};
-\item a collection of articles%~\cite{lhc:vol1};
-\item a conference note%~\cite{ATLAS-CONF-2011-008};
-\item a preprint%~\cite{atlas:perf:2009} 
-(you can also use
-  \texttt{@online} or \texttt{@booklet} for such things);
-\item something that is only available online%~\cite{thesis-guide}.
-\end{itemize}
+% The introduction usually gives a few pages of introduction to the
+% whole subject, maybe even starting with the Greeks.
 
-At the end of the introduction it is normal to say briefly what comes
-in the following chapters.
+% For more information on \LaTeX{} and the packages that are available
+% see for example the books of Kopka%~\cite{kopka04}
+%  and Goossens et
+% al%~\cite{goossens04}.
 
-The line at the beginning of this file is used by TeXstudio etc.\ to
-specify which is the master \LaTeX\ file, so that you can compile your thesis
-directly from this file.
-If your thesis is called something other than \texttt{mythesis}, adjust it as appropriate.
+% A lot of useful information on particle physics can be found in the
+% \enquote{Particle Data Book}%~\cite{pdg2010}.
+
+% I have resisted the temptation to put a lot of definitions into the
+% file \texttt{thesis\_defs.sty}, as everyone has their own taste as
+% to what scheme they want to use for names.
+% However, a few examples are included to help you get started:
+% \begin{itemize}
+% \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+% \item cross-sections are measured in \si{\pb} and integrated
+%   luminosity in \si{\invpb};
+% \item the \KoS is an interesting particle;
+% \item the missing transverse momentum, \pTmiss, is often called
+%   missing transverse energy, even though it is calculated using a vector sum.
+% \end{itemize}
+% Note that the examples of units assume that you are using the
+% \textsf{siunitx} package.
+
+% It also is probably a good idea to include a few well formatted
+% references in the thesis skeleton. More detailed suggestions on what
+% citation types to use can be found in the \enquote{Thesis Guide}%~\cite{thesis-guide}:
+% \begin{itemize}
+% \item articles in refereed journals%~\cite{pdg2010,Aad:2010ey};
+% \item a book%~\cite{Halzen:1984mc};
+% \item a PhD thesis%~\cite{tlodd:2012} and a Diplom thesis~\cite{mergelmeyer:2011};
+% \item a collection of articles%~\cite{lhc:vol1};
+% \item a conference note%~\cite{ATLAS-CONF-2011-008};
+% \item a preprint%~\cite{atlas:perf:2009} 
+% (you can also use
+%   \texttt{@online} or \texttt{@booklet} for such things);
+% \item something that is only available online%~\cite{thesis-guide}.
+% \end{itemize}
+
+% At the end of the introduction it is normal to say briefly what comes
+% in the following chapters.
+
+% The line at the beginning of this file is used by TeXstudio etc.\ to
+% specify which is the master \LaTeX\ file, so that you can compile your thesis
+% directly from this file.
+% If your thesis is called something other than \texttt{mythesis}, adjust it as appropriate.

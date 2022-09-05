@@ -1,11 +1,12 @@
 %------------------------------------------------------------------------------
-\chapter{Symmetries of the correlation functions}
+\chapter{Appendix}
 \label{sec:app}
 %------------------------------------------------------------------------------
 
- In this chapter, we will derive in detail how the symmetry operators transform the two-body correlation functions. In this work we are working with only two kinds of correlators, but from them we can also get a feeling of the symmetry transformations. As a side note, it is shown on the right side of the column sign (":") in the titles if the operator transforms well the full Hamiltonian or only at half-filling.
+\section{Symmetry Correlation Functions}
+We will derive in detail how the symmetry operators transform the two-body correlation functions. In this work we are working with only two kinds of correlators, but from them we can also get a feeling of the symmetry transformations. As a side note, it is shown on the right side of the column sign (":") in the titles if the operator transforms well the full Hamiltonian or only at half-filling.
 
-\section{Particle-Hole Correlation Function}
+\subsection{Particle-Hole Correlation Function}
 
 Since we have already shown in Section \ref{ssec:sym-twobody} the transformation of (\ref{eq:phhpmat}) using the thermal trace cyclicity property, we will directly start from the next symmetry operator.
 
@@ -309,7 +310,7 @@ Depending on what transformation we use to get back to $\langle phh^\dagger p^\d
   \end{aligned}
 \end{equation}
 
-\section{Particle-Particle Correlation Function}
+\subsection{Particle-Particle Correlation Function}
 
 The correlation function with two particles at the source and two at the sink can be transformed in more ways. To show this, we start again with correlator $\langle ppp^\dagger p^\dagger\rangle$. In trace and matrix forms it look like this.
 
@@ -842,5 +843,84 @@ These identities show us that we can, average our data four fold only because we
     \\
   \end{aligned}
 \end{equation}
+
+\section{Generated Ensembles}
+\label{app:all_ensembles}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{ccccc}
+      $(L_1,L_2)$ & $U$ & $\beta$ & Nt & $\#momenta$ \\
+      \hline
+      (6,6) & 3 & 3 & 128 & 12
+      \\
+      (6,6) & 3 & 3 & 192 & 12
+      \\
+      (6,6) & 3 & 3 & 256 & 12
+      \\
+      (6,6) & 3 & 6 & 128 & 12
+      \\
+      (6,6) & 3 & 6 & 192 & 12
+      \\
+      (6,6) & 3 & 6 & 256 & 12
+      \\
+      (6,6) & 3 & 9 & 128 & 12
+      \\
+      (6,6) & 3 & 9 & 192 & 12
+      \\
+      (6,6) & 3 & 9 & 256 & 12
+      \\
+      (6,6) & 3 & 24 & 128 & 12
+      \\
+      (6,6) & 3 & 24 & 192 & 12
+      \\
+      (6,6) & 3 & 24 & 256 & 12
+      \\
+      \hline
+      (6,6) & 4 & 3 & 128 & 12
+      \\
+      (6,6) & 4 & 3 & 192 & 12
+      \\
+      (6,6) & 4 & 3 & 256 & 12
+      \\
+      (6,6) & 4 & 6 & 128 & 12
+      \\
+      (6,6) & 4 & 6 & 192 & 12
+      \\
+      (6,6) & 4 & 6 & 256 & 12
+      \\
+      (6,6) & 4 & 9 & 128 & 12
+      \\
+      (6,6) & 4 & 9 & 192 & 12
+      \\
+      (6,6) & 4 & 9 & 256 & 12
+      \\
+      (6,6) & 4 & 24 & 128 & 12
+      \\
+      (6,6) & 4 & 24 & 192 & 12
+      \\
+      (6,6) & 4 & 24 & 256 & 12
+      \\
+  \end{tabular}
+  \caption{All ensembles that we have generated.}
+  \label{tab:all_ensembles}
+\end{table}
+
+\section{Bootstrap}
+\label{app:bootstrap}
+
+The result we get from averaging all configurations (\ref{eq:ensamble_average}) after the MC simulation is a mean value ($\mu$) without an uncertainty. This cannot be true because if we take a subset of the measurements and average them the result will be a different $\mu$. We also know that every measurement is coming with an inherent uncertainty. The bootstrapping method gives us a way to estimate a more accurate mean value and its variance.
+
+The way bootstrap works, is by randomly sampling with replacement elements from the original dataset to create a new one, with the same number of data points. This is equivalent to performing a new simulation. The whole process is repeated for $R$ (usually $100\div200$) bootstrap samples $\mu^b$. And finally, we average the results to find the bootstrap mean
+\begin{equation}
+  \bar{\mu}_{bs} = \frac{1}{R}\sum^R_{b=1} \mu^b
+\end{equation}
+and standard derivation
+\begin{equation}
+  \sigma_{bs} = \sqrt{\frac{1}{R-1}\sum^R_{b=1} (\mu^b-\bar{\mu}_{bs})}
+\end{equation}
+For uncorrelated data, the bootstrap error scales as ${\sim}1/\sqrt{N}$.
+
+The advantage of this method is that it can be applied to different kind of distributions. This is because bootstrap acts on the data, not on the underlying distribution. Therefore, the other advantage is that it also automatically incorporates the inherent correlations in the dataset. Lastly, this method is simple to implement and can make the error estimation automatic.
 
 %The \LaTeX\ WikiBook~\cite{latexwiki} is a useful source of information on \LaTeX.
