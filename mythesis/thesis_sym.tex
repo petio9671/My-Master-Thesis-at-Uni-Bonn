@@ -348,7 +348,7 @@ On Figure \ref{fig:charge-flip} is shown how the charge and spin of all creation
         \spindown{blue}{F};
       \end{scope}
 
-      \draw[arrow] (3.5,0) -- (6,0) node [midway, sloped, above] {$I$};
+      \draw[arrow] (3.5,0) -- (6,0) node [midway, sloped, above] {$C$};
     \end{tikzpicture}
   \end{center}
   \caption{An example of the charge transformation with all possibilities of creation/annihilation operators. The graphs show only the transformation of the charge and the spin of the operators. The color of the arrows shows the charge (blue = $+1$, red = $-1$) and the orientation shows the spin. We can go back and forth between the left and the right graphs by using the charge-flip conjugation.}
@@ -892,3 +892,9 @@ After a lot of calculations and transformations, we produce Table \ref{tab:pppp}
   \caption{All the correlators that can be directly averaged, if they all take a $4 \times 4$ matrix form. The correlators above the double line may be averaged even at finite $\mu$ and everything below may be averaged when $\mu = 0$. The combination of charge and spin indicate whether $p^\dagger p^\dagger$ or $pp$ is at the source (right-most). The \textit{trafo} column indicates what must be done in the internal $4 \times 4$ momentum space before averaging; $\top$ indicates transpose, $\sigma_1\cdot\sigma_1$ indicates conjugation by $\sigma_1$, $\sigma_5\cdot\sigma_5$ indicates conjugation by $\sigma_5$, minus sign indicates that there must be added one minus in front, and $1$ indicates that no operation is needed. The next column $kqrs$ indicates the position of the momenta at the sink and source relative to the initial correlator is. The $\tau$ column indicates whether the given correlator needs to be time-reversed.}
   \label{tab:pppp}
 \end{table}
+
+Whenever we are dealing with more than a one-body system, we must account for the structure of the BZ (Section \ref{sec:lattice}). In the case of two-body systems, it is more convenient to use the total momentum ($\vec{P}$) and the relative momentum of the particles instead of the momenta of the one-body operators. States constructed from two single-body means that it is possible for the total momentum to be outside the first BZ. The prescription is to modulo the momentum back in the Brillouin zone ($mod_{BZ}(\vec{P})$). It is possible to make this transformation due to the periodicity of the lattice. The physics of the observables is dictated only by the total momentum. It means that systems with equal $\vec{P}$, but different relative momenta can be mapped together. The mapping is represented by the little group of $\mathcal{G}$ which preserves the total momentum $\vec{P}$. Therefore, we can construct total momenta shells with different relative momentum in each one. And finally, we can find the ireducible representations for each momentum shell (see Figure \ref{fig:mom_shells}). The momentum labeling of the correlation functions can be changed to
+\begin{equation}
+  \vec{k},\vec{s} \longrightarrow \vec{P},\vec{p},\rho;
+\end{equation}
+where $\vec{P} = \vec{k}+\vec{s}$ is the total momentum, $\vec{p} = \frac{\vec{k}-\vec{s}}{2}$ is the relative momentum, and $\rho$ is an irreducible representation of the little group~\cite{evan}.

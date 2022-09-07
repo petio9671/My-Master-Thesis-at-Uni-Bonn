@@ -135,30 +135,19 @@ where the number of momenta ($\#momenta$) governs the number of files and the ot
 
 Final data analysis is done in several steps. First adjust the source and sink to the momentum points so that the total momentum is equal. Then read the data and find the largest eigenvalue from the correlator matrix. We extract the energies from the correlation functions for different combinations of lattice sizes, time slice ranges, and irreducible representations using fit functions. Next, we calculate the binding energy of the exciton and then try to extrapolate with two different fitting functions to the continuum limit, i.e. linear and quadratic approximations. This way two different sets of data points are generated that we can use to estimate the infinite volume of the energy.
 
-In this thesis, we will extract the binding energy using two different methods. One is done by independently fitting the correlators and the other simultaneously fitting them. While the data are symmetrical around $\beta/2$, we are allowed fit a hyperbolic cosine function instead of the exponential function (\ref{eq:fit_exponent}). For simplicity, we will only work at $U = 3.0$ with total momentum $\Gamma$ and source/sink momenta at the Dirac points $K, K'$. The reason is because of data constraints (Table \ref{tab:work_ensembles}) and the available momenta of interest (only $\Gamma, K, K'$ are present for all lattice sizes).
+In this thesis, we will extract the binding energy using an approximating function. It is done by independently fitting the correlators. While the data are symmetrical around $\beta/2$, we are allowed fit a hyperbolic cosine function instead of the exponential function (\ref{eq:fit_exponent}). For simplicity, we will only work at $U = 3.0$ with total momentum $\Gamma$ and source/sink momenta at the Dirac points $K, K'$. The reason is because of data constraints (Table \ref{tab:work_ensembles}) and the available momenta of interest (only $\Gamma, K, K'$ are present for all lattice sizes).
 
-The first method for obtaining the binding energy (\ref{eq:binding_energy}) extracts the energy from the two-body correlation function by fitting
+The method for obtaining the binding energy (\ref{eq:binding_energy}) extracts the energy from the two-body correlation function by fitting
 \begin{equation}
-    f(t) = A\cosh(E(t-\frac{\beta}{2})) + C,
+    f(t) = A\cosh(E_0(t-\frac{\beta}{2})) + C,
 \end{equation}
 and then the one-body correlator energy
 \begin{equation}
-    f(t) = A\cosh(E(t-\frac{\beta}{2})),
+    f(t) = A\cosh(E_0(t-\frac{\beta}{2})),
 \end{equation}
-where $A, E, C$ are fit parameters for amplitude, energy, and a constant that describes the backward propagating. We obtain $\Delta E$ after subtracting the energies. The data analysis then proceeds by reaching the continuum and infinite volume limits. The results on Figures (a lot of figures) show that the exciton binding energy is greater than expected, nearly the free energy of a particle. Moreover, the same approximation to the two particle correlation functions shows that the binding energies are also negative.
+where $A, E_0, C$ are fit parameters for amplitude, ground energy, and a constant that describes the backward propagating. We obtain $\Delta E$ after subtracting the energies. The data analysis then proceeds by reaching the continuum and infinite volume limits. The results on Figures (a lot of figures) show that the exciton binding energy is a positive number, nearly the free energy of a particle. Moreover, the same approximation to the two particle correlation functions shows that their binding energy is also positive (as expected).
 
-The other method directly extracts the binding energy (\ref{eq:binding_energy}) of the particle pairs by fitting all correlation functions simultaneously with
-\begin{equation}
-    \begin{aligned}
-        f_h(t) &= A_h\cosh(E_h(t-\frac{\beta}{2})) \\
-        f_p(t) &= A_p\cosh(E_p(t-\frac{\beta}{2})) \\
-        f_{phhp}(t) &= A_{phhp}\cosh((\Delta E_{phhp}+(E_p+E_h))(t-\frac{\beta}{2})) + C_1 \\
-        f_{pppp}(t) &= A_{pppp}\cosh((\Delta E_{pppp}+2E_p)(t-\frac{\beta}{2})) + C_2
-    \end{aligned}    
-\end{equation}
-where the amplitudes $A$ and constraints $C$ are independent fit parameters; $E_h, E_p$ are shared between functions, and $\Delta E_{phhp}, \Delta E_{pppp}$ are the binding energies of the pairs. The data analysis then proceeds by reaching the continuum and infinite volume limits. The results on Figures (a lot of figures) show that the binding energies is different from the precious method. Meaning that the data obtained from the simulations or the model itself have strong intrinsic correlation that are not accounted in the first method.
-
-From the results of both methods, we see that there a small scaling when extrapolating of the infinite volume. This means that we could try to fit and extrapolate other data ensembles only to the continuum limit, and we can be confident that the result we get is in the vicinity of the true value.
+We note that the results of $\Delta E_{phhp}$ and $\Delta E_{pppp}$ show a small scaling when extrapolating of the infinite volume. This means that we could try to fit and extrapolate other data ensembles to the continuum limit and then the zero temperature limit at finite volume, and we can assume that the result we get is in the vicinity of the true value.
 
 % If the results from both methods are equivalent up to the statistical uncertainties, we can be confident of our findings. There may be some interesting physics happening that will need further investigation. If the energies are different up to statistical error (that is, what we would expect), this may be due to the fact that the data obtained from the simulations or the model itself have strong intrinsic correlation that are not accounted in the first method.
 
@@ -167,7 +156,3 @@ From the results of both methods, we see that there a small scaling when extrapo
 % We calculate the binding energy (\ref{eq:binding_energy}) of the exciton by first extracting the energy from the two-body correlation function, then the energies of the one-body correlators. After a subtraction, we get $\epsilon$. 
 
 % The next figures show the fitting of the correlators. As our data is symmetrized, we can fit a general cosine hyperbolic function instead of an exponential function. (PRE-REPHRASED)
-
-
-
-\todo{Write about the group theory of the two particles. Little group. Irreps}
