@@ -43,6 +43,7 @@
 % \usetikzlibrary{calc} 
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
+\usepackage{subcaption}
 \usepackage{thesis_defs}
 
 %------------------------------------------------------------------------------
@@ -76,17 +77,17 @@
 %------------------------------------------------------------------------------
 % The following definitions are used to produce the title pages
 % needed at various stages
-\newcommand{\thesistitle}{Title of the Thesis}
-\newcommand*{\thesisauthor}{Author's name}
+\newcommand{\thesistitle}{Non-perturbative calculation of the spectrum of excitons in low-dimensional systems, using lattice stochastic methods}
+\newcommand*{\thesisauthor}{Petar Sinilkov}
 \newcommand*{\thesistown}{Place of birth}
 \renewcommand*{\InstituteName}{\HISKP}
 \renewcommand*{\inInstitute}{\inHISKP}
 \renewcommand*{\InstituteAddress}{\HISKPaddress}
 % Adjust \thesisreferee...text depending on male/female referee
 \newcommand*{\thesisrefereeonetext}{1.\ Gutachter}
-\newcommand*{\thesisrefereeone}{Prof.\ Dr.\ John Smith}
-\newcommand*{\thesisrefereetwotext}{2.\ Gutachterin}
-\newcommand*{\thesisrefereetwo}{Prof.\ Dr.\ Anne Jones}
+\newcommand*{\thesisrefereeone}{Prof.\ Dr.\ Stefan Krieg}
+\newcommand*{\thesisrefereetwotext}{2.\ Gutachter}
+\newcommand*{\thesisrefereetwo}{Prof.\ Dr.\ Thomas Luu}
 % Date when thesis was submitted (Master/Diplom)
 % Year or Month, Year when thesis was submitted (PhD)
 \newcommand*{\thesissubmit}{XX.YY.2021}
@@ -128,6 +129,12 @@
   {figs/}%
   {figs/cover/}%
   {figs/figures/}%
+  {figs/figures/infVolLim/phhp}%
+  {figs/figures/infVolLim/pppp}%
+  {figs/figures/zeroTempLim/thesisU3/phhp_u3}%
+  {figs/figures/zeroTempLim/thesisU3/pppp_u3}%
+  {figs/figures/zeroTempLim/thesisU4/phhp_u4}%
+  {figs/figures/zeroTempLim/thesisU4/pppp_u4}%
 }
 
 %------------------------------------------------------------------------------

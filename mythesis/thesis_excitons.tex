@@ -66,7 +66,7 @@ An important aspect to the data gathering is the available storage. Before we ev
         Scaling \sim \#momenta^{4} \times \left( \#Nt \times \#configs \right),
     \end{aligned}
 \end{equation}
-where the number of momenta ($\#momenta$) governs the number of files and the other the file size. Therefore, we must be careful with the number of momenta. For this thesis work we have generated a number of ensembles with $1000 \div  4000$ configurations per ensemble. Table \ref{tab:work_ensembles} shows the ensembles that we will use in the data fitting. One could see in Appendix \ref{app:all_ensembles} the total number of ensembles that we have gathered so far. We could only extrapolate to the continuum limit with them but not to the infinite volume limit because there are going to be only a few points to extrapolate from. Thus, we use only this small subset of all ensembles, which has enough to reach both limits.\todo{In the future, we can expand the list of ensembles so that we can reach these two limits, as well as the zero temperature limit.}
+where the number of momenta ($\#momenta$) governs the number of files and the other the file size. Therefore, we must be careful with the number of momenta. For this thesis work we have generated a number of ensembles with $1000 \div  4000$ configurations per ensemble. Table \ref{tab:work_ensembles} shows the ensembles that we will use in the data fitting. One could see in Appendix \ref{app:all_ensembles} the other ensembles that we have gathered so far. We could only extrapolate to the continuum limit with them but not to the infinite volume limit because there are going to be only a few points to extrapolate from. Thus, we use only this subset of all ensembles, which has enough to reach both limits. In the future, we can expand the list of ensembles so that we can reach these two limits, as well as the zero temperature limit.
 
 \begin{table}[h]
     \centering
@@ -135,19 +135,127 @@ where the number of momenta ($\#momenta$) governs the number of files and the ot
 
 Final data analysis is done in several steps. First adjust the source and sink to the momentum points so that the total momentum is equal. Then read the data and find the largest eigenvalue from the correlator matrix. We extract the energies from the correlation functions for different combinations of lattice sizes, time slice ranges, and irreducible representations using fit functions. Next, we calculate the binding energy of the exciton and then try to extrapolate with two different fitting functions to the continuum limit, i.e. linear and quadratic approximations. This way two different sets of data points are generated that we can use to estimate the infinite volume of the energy.
 
-In this thesis, we will extract the binding energy using an approximating function. It is done by independently fitting the correlators. While the data are symmetrical around $\beta/2$, we are allowed fit a hyperbolic cosine function instead of the exponential function (\ref{eq:fit_exponent}). For simplicity, we will only work at $U = 3.0$ with total momentum $\Gamma$ and source/sink momenta at the Dirac points $K, K'$. The reason is because of data constraints (Table \ref{tab:work_ensembles}) and the available momenta of interest (only $\Gamma, K, K'$ are present for all lattice sizes).
+In this thesis, we will extract the binding energy using an approximating function. It is done by independently fitting the correlators. While the data are symmetrical around $\beta/2$, we are allowed fit a hyperbolic cosine function instead of the exponential function (\ref{eq:fit_exponent}). 
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=0.5\linewidth]{BZ_used.pdf}}
+    \caption{blabla}
+    \label{fig:used irrep}
+\end{figure}
+For simplicity, we will only work at $U = 3.0$ with total momentum $\Gamma$ and source/sink momenta at the Dirac points $K, K'$. The reason is because of data constraints (Table \ref{tab:work_ensembles}) and the available momenta of interest (only $\Gamma, K, K'$ are present for all lattice sizes). This set of momenta gives a constraint on the irreducible representations. We are working only with irreducible representations $A1$ and $B2$ (Figure \ref{fig:used irrep}).
 
 The method for obtaining the binding energy (\ref{eq:binding_energy}) extracts the energy from the two-body correlation function by fitting
 \begin{equation}
     f(t) = A\cosh(E_0(t-\frac{\beta}{2})) + C,
+    \label{eq:cosh2}
 \end{equation}
 and then the one-body correlator energy
 \begin{equation}
     f(t) = A\cosh(E_0(t-\frac{\beta}{2})),
+    \label{eq:cosh1}
 \end{equation}
-where $A, E_0, C$ are fit parameters for amplitude, ground energy, and a constant that describes the backward propagating. We obtain $\Delta E$ after subtracting the energies. The data analysis then proceeds by reaching the continuum and infinite volume limits. The results on Figures (a lot of figures) show that the exciton binding energy is a positive number, nearly the free energy of a particle. Moreover, the same approximation to the two particle correlation functions shows that their binding energy is also positive (as expected).
+where $A, E_0, C$ are fit parameters for amplitude, ground energy, and a constant that describes the backward propagating. We obtain $\Delta E$ after subtracting the energies. The data analysis then proceeds by reaching the continuum and infinite volume limits.
+\begin{figure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U3.0_B6.0.pdf}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U3.0_B6.0_cont.pdf}
+    \end{subfigure}
+    \caption{plots of....}
+    \label{fig:cont_lim}
+\end{figure}
+It is shown on Figure \ref{fig:cont_lim}, the fitting of (\ref{eq:cosh1}) and (\ref{eq:cosh2}) to one- and two-body correlation functions for all available $N_t$. After that all energies are used to extrapolate to continuum limit using a linear and a quadratic functions. This process is repeated for every lattice size, two-body correlation functions, and irreducible representations (All fits could be seen in Appendix \ref{app:limit}).
+\begin{figure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{phhp-0-A1_21x21_U3_B6_vol.pdf}
+      \caption{1a}
+      \label{fig:sfig1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{phhp-0-B2_21x21_U3_B6_vol.pdf}
+      \caption{1b}
+      \label{fig:sfig2}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pppp-0-A1_21x21_U3_B6_vol.pdf}
+        \caption{1c}
+        \label{fig:sfig3}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pppp-0-B2_21x21_U3_B6_vol.pdf}
+        \caption{1d}
+        \label{fig:sfig4}
+    \end{subfigure}
+    \caption{plots of....}
+    \label{fig:u3vol}
+  \end{figure}
+The infinite volume results on Figure \ref{fig:u3vol} show that the exciton's binding energy is a positive number for finite temperature and $U=3.0$. Furthermore, the same approximation to the particle-particle correlation functions shows as expected that their binding energy is also positive (Figure \ref{fig:u3vol}). Both irreducible representations have the same behavior.
 
-We note that the results of $\Delta E_{phhp}$ and $\Delta E_{pppp}$ show a small scaling when extrapolating of the infinite volume. This means that we could try to fit and extrapolate other data ensembles to the continuum limit and then the zero temperature limit at finite volume, and we can assume that the result we get is in the vicinity of the true value.
+We note that the results of $\Delta E_{phhp}$ and $\Delta E_{pppp}$ show a small scaling when extrapolating of the infinite volume. This means that we could try to fit and extrapolate our data to the continuum limit followed by the zero temperature limit at finite volume. We can assume that the result we get, is in the vicinity of the true value, but with extra systematic error. From the available ensembles (Table \todo{Add more tables}), we could not only get results for $U=3.0$ but also for $U=4.0$, which is on the other side of the critical coupling $U\approx 3.85$. Here, we will show only the final results for both correlation function at both couplings and irreducible representations. All plots reaching the continuum limit are shown in Appendix \ref{app:limit}. 
+\begin{figure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U3.0_B24.0_temp.pdf}
+      \caption{1a}
+      \label{fig:sfig1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U3.0_B24.0_temp.pdf}
+      \caption{1b}
+      \label{fig:sfig2}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U3.0_B24.0_temp.pdf}
+        \caption{1c}
+        \label{fig:sfig3}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U3.0_B24.0_temp.pdf}
+        \caption{1d}
+        \label{fig:sfig4}
+    \end{subfigure}
+    \caption{plots of....}
+    \label{fig:u3temp}
+  \end{figure}
+The results for $U=3.0$ (Figure \ref{fig:u3temp}) show that the binding energy of the exciton as well as the particle pair is close to zero for both irreducible representations (Figure \ref{fig:u4temp}). 
+\begin{figure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U4.0_B24.0_temp.pdf}
+      \caption{1a}
+      \label{fig:sfig1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U4.0_B24.0_temp.pdf}
+      \caption{1b}
+      \label{fig:sfig2}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U4.0_B24.0_temp.pdf}
+        \caption{1c}
+        \label{fig:sfig3}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U4.0_B24.0_temp.pdf}
+        \caption{1d}
+        \label{fig:sfig4}
+    \end{subfigure}
+    \caption{plots of....}
+    \label{fig:u4temp}
+  \end{figure}
+When above the critical coupling ($U=4.0$), the binding energy of the particle-hole pair is negative for $A1$, but not $B2$. 
 
 % If the results from both methods are equivalent up to the statistical uncertainties, we can be confident of our findings. There may be some interesting physics happening that will need further investigation. If the energies are different up to statistical error (that is, what we would expect), this may be due to the fact that the data obtained from the simulations or the model itself have strong intrinsic correlation that are not accounted in the first method.
 
