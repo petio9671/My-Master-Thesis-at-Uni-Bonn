@@ -8,7 +8,7 @@ We will derive in detail how the symmetry operators transform the two-body corre
 
 \subsection{Particle-Hole Correlation Function}
 
-Since we have already shown in Section \ref{ssec:sym-twobody} the transformation of (\ref{eq:phhpmat}) using the thermal trace cyclicity property, we will directly start from the next symmetry operator.
+Since we have already shown in \cref{ssec:sym-twobody} the transformation of \cref{eq:phhpmat} using the thermal trace cyclicity property, we will directly start from the next symmetry operator.
 
 \subsubsection{\underline{$I : H - \vec{\mu}\cdot\vec{q}$}}
 
@@ -844,72 +844,72 @@ These identities show us that we can, average our data four fold only because we
   \end{aligned}
 \end{equation}
 
-\section{Generated Ensembles}
-\label{app:all_ensembles}
+% \section{Generated Ensembles}
+% \label{app:all_ensembles}
 
-\begin{table}[h]
-  \centering
-  \begin{tabular}{ccccc}
-      $(L_1,L_2)$ & $U$ & $\beta$ & Nt & $\#momenta$ \\
-      \hline
-      (6,6) & 3 & 3 & 128 & 12
-      \\
-      (6,6) & 3 & 3 & 192 & 12
-      \\
-      (6,6) & 3 & 3 & 256 & 12
-      \\
-      (6,6) & 3 & 6 & 128 & 12
-      \\
-      (6,6) & 3 & 6 & 192 & 12
-      \\
-      (6,6) & 3 & 6 & 256 & 12
-      \\
-      (6,6) & 3 & 9 & 128 & 12
-      \\
-      (6,6) & 3 & 9 & 192 & 12
-      \\
-      (6,6) & 3 & 9 & 256 & 12
-      \\
-      (6,6) & 3 & 24 & 128 & 12
-      \\
-      (6,6) & 3 & 24 & 192 & 12
-      \\
-      (6,6) & 3 & 24 & 256 & 12
-      \\
-      \hline
-      (6,6) & 4 & 3 & 128 & 12
-      \\
-      (6,6) & 4 & 3 & 192 & 12
-      \\
-      (6,6) & 4 & 3 & 256 & 12
-      \\
-      (6,6) & 4 & 6 & 128 & 12
-      \\
-      (6,6) & 4 & 6 & 192 & 12
-      \\
-      (6,6) & 4 & 6 & 256 & 12
-      \\
-      (6,6) & 4 & 9 & 128 & 12
-      \\
-      (6,6) & 4 & 9 & 192 & 12
-      \\
-      (6,6) & 4 & 9 & 256 & 12
-      \\
-      (6,6) & 4 & 24 & 128 & 12
-      \\
-      (6,6) & 4 & 24 & 192 & 12
-      \\
-      (6,6) & 4 & 24 & 256 & 12
-      \\
-  \end{tabular}
-  \caption{All ensembles that we have generated.}
-  \label{tab:all_ensembles}
-\end{table}
+% \begin{table}[h]
+%   \centering
+%   \begin{tabular}{ccccc}
+%       $(L_1,L_2)$ & $U$ & $\beta$ & Nt & $\#momenta$ \\
+%       \hline
+%       (6,6) & 3 & 3 & 128 & 12
+%       \\
+%       (6,6) & 3 & 3 & 192 & 12
+%       \\
+%       (6,6) & 3 & 3 & 256 & 12
+%       \\
+%       (6,6) & 3 & 6 & 128 & 12
+%       \\
+%       (6,6) & 3 & 6 & 192 & 12
+%       \\
+%       (6,6) & 3 & 6 & 256 & 12
+%       \\
+%       (6,6) & 3 & 9 & 128 & 12
+%       \\
+%       (6,6) & 3 & 9 & 192 & 12
+%       \\
+%       (6,6) & 3 & 9 & 256 & 12
+%       \\
+%       (6,6) & 3 & 24 & 128 & 12
+%       \\
+%       (6,6) & 3 & 24 & 192 & 12
+%       \\
+%       (6,6) & 3 & 24 & 256 & 12
+%       \\
+%       \hline
+%       (6,6) & 4 & 3 & 128 & 12
+%       \\
+%       (6,6) & 4 & 3 & 192 & 12
+%       \\
+%       (6,6) & 4 & 3 & 256 & 12
+%       \\
+%       (6,6) & 4 & 6 & 128 & 12
+%       \\
+%       (6,6) & 4 & 6 & 192 & 12
+%       \\
+%       (6,6) & 4 & 6 & 256 & 12
+%       \\
+%       (6,6) & 4 & 9 & 128 & 12
+%       \\
+%       (6,6) & 4 & 9 & 192 & 12
+%       \\
+%       (6,6) & 4 & 9 & 256 & 12
+%       \\
+%       (6,6) & 4 & 24 & 128 & 12
+%       \\
+%       (6,6) & 4 & 24 & 192 & 12
+%       \\
+%       (6,6) & 4 & 24 & 256 & 12
+%       \\
+%   \end{tabular}
+%   \caption{All ensembles that we have generated.}
+%   \label{tab:all_ensembles}
+% \end{table}
 
 \section{Bootstrap}
 \label{app:bootstrap}
 
-The result we get from averaging all configurations (\ref{eq:ensamble_average}) after the MC simulation is a mean value ($\mu$) without an uncertainty. This cannot be true because if we take a subset of the measurements and average them the result will be a different $\mu$. We also know that every measurement is coming with an inherent uncertainty. The bootstrapping method gives us a way to estimate a more accurate mean value and its variance.
+The result we get from averaging all configurations (\cref{eq:ensamble_average}) after the MC simulation is a mean value ($\mu$) without an uncertainty. This cannot be true because if we take a subset of the measurements and average them the result will be a different $\mu$. We also know that every measurement is coming with an inherent uncertainty. The bootstrapping method gives us a way to estimate a more accurate mean value and its variance.
 
 The way bootstrap works, is by randomly sampling with replacement elements from the original dataset to create a new one, with the same number of data points. This is equivalent to performing a new simulation. The whole process is repeated for $R$ (usually $100\div200$) bootstrap samples $\mu^b$. And finally, we average the results to find the bootstrap mean
 \begin{equation}
@@ -926,589 +926,425 @@ The advantage of this method is that it can be applied to different kind of dist
 \section{Reaching the Continuum Limit}
 \label{app:limit}
 
-In this section of the Appendix are shown all plots that are used to reach the limits described in the main text. It is separated into subsections that show plots for each individual limit. Some plots are might be used more than once for readability.
-
-First, we start to extrapolate ensembles with different volume
+In this section of the \cref{sec:app} are shown all plots that are used to reach the limits described in the main text. First, we start to extrapolate to the continuum limit, ensembles with different volume (\crefrange{fig:fig1}{fig:fig10}). Then, we extrapolate ensembles with constant lattice size $(6\times6)$ and different $\beta$ and $U$ (\crefrange{fig:fig11}{fig:fig20}).
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U3.0_B6.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U3.0_B6.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U3.0_B6.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U3.0_B6.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig1}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_9x9_U3_B6.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_9x9_U3_B6.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_9x9_U3_B6_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_9x9_U3_B6_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig2}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_12x12_U3_B6.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_12x12_U3_B6.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_12x12_U3_B6_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_12x12_U3_B6_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig3}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_15x15_U3_B6.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_15x15_U3_B6.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_15x15_U3_B6_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_15x15_U3_B6_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig4}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_21x21_U3_B6.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_21x21_U3_B6.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_21x21_U3_B6_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_21x21_U3_B6_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig5}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U3.0_B6.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U3.0_B6.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U3.0_B6.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U3.0_B6.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig6}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_9x9_U3_B6.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_9x9_U3_B6.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_9x9_U3_B6_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_9x9_U3_B6_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig7}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_12x12_U3_B6.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_12x12_U3_B6.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_12x12_U3_B6_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_12x12_U3_B6_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig8}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_15x15_U3_B6.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_15x15_U3_B6.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_15x15_U3_B6_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_15x15_U3_B6_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig9}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_21x21_U3_B6.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_21x21_U3_B6.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_21x21_U3_B6_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_21x21_U3_B6_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig10}
 \end{figure}
-
-
-Then, we extrapolate ensembles with constant lattice size $(6\times6)$ and different $\beta$ and $U$ 
+ 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U3.0_B9.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U3.0_B9.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U3.0_B9.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U3.0_B9.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig11}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U3.0_B24.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U3.0_B24.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U3.0_B24.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U3.0_B24.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig12}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U3.0_B9.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U3.0_B9.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U3.0_B9.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U3.0_B9.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig13}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U3.0_B24.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U3.0_B24.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U3.0_B24.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U3.0_B24.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig14}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U4.0_B6.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U4.0_B6.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U4.0_B6.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U4.0_B6.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig15}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U4.0_B9.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U4.0_B9.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U4.0_B9.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U4.0_B9.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig16}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U4.0_B24.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U4.0_B24.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-A1_6x6_U4.0_B24.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{phhp-0-B2_6x6_U4.0_B24.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-hole pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig17}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U4.0_B6.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U4.0_B6.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U4.0_B6.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U4.0_B6.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig18}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U4.0_B9.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U4.0_B9.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U4.0_B9.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U4.0_B9.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig19}
 \end{figure}
 
 \begin{figure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U4.0_B24.0.pdf}
-    \caption{1a}
-    \label{fig:sfig1}
   \end{subfigure}%
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U4.0_B24.0.pdf}
-    \caption{1b}
-    \label{fig:sfig2}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-A1_6x6_U4.0_B24.0_cont.pdf}
-      \caption{1c}
-      \label{fig:sfig3}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=\linewidth]{pppp-0-B2_6x6_U4.0_B24.0_cont.pdf}
-      \caption{1d}
-      \label{fig:sfig4}
   \end{subfigure}
-  \caption{plots of....}
-  \label{fig:fig}
+  \caption{Binding energy extraction of the particle-particle pair at both irreducible representations, where we fit one- and two-body correlators for every $N_t$. This is followed by fitting a linear and a quadratic functions to the $\Delta E_{N_t}$ in order to extrapolate to the continuum limit ($N_t\to\infty$).}
+  \label{fig:fig20}
 \end{figure}
 
 %The \LaTeX\ WikiBook~\cite{latexwiki} is a useful source of information on \LaTeX.

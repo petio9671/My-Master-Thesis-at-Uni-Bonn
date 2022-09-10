@@ -10,7 +10,7 @@ In this chapter, we will explore the definition of an exciton, the Hubbard theor
 
 \section{Excitons}
 % Terminology
-An exciton is a bound state of electron and hole. This neutral quasi-particle is bosoniclike, meaning that it can occupy the same excitonic ground state. These composite particles are theorized to be formed when the binding energy of the electron-hole pair is bigger than the band gap. This results in an unstable ground state against spontaneous exciton generation (Fig. \ref{fig:exciton_gap}). It is worth noting that the ground state instability is important because the so called excitonic insulator is a candidate for observing a Bose-Einstein condensation transition~\cite{grossnev}. The excitons remind of the Cooper pairs (bound state of spin-up and spin-down electrons) used in describing superconductivity. Similarly, they form below a critical temperature and impose a quasi-particle gap~\cite{ctubes}. Unlike the Cooper pairs, they do not transport charge or mass but only energy~\cite{grossnev}. 
+An exciton is a bound state of electron and hole. This neutral quasi-particle is bosoniclike, meaning that it can occupy the same excitonic ground state. These composite particles are theorized to be formed when the binding energy of the electron-hole pair is bigger than the band gap. This results in an unstable ground state against spontaneous exciton generation (\cref{fig:exciton_gap}). It is worth noting that the ground state instability is important because the so called excitonic insulator is a candidate for observing a Bose-Einstein condensation transition~\cite{grossnev}. The excitons remind of the Cooper pairs (bound state of spin-up and spin-down electrons) used in describing superconductivity. Similarly, they form below a critical temperature and impose a quasi-particle gap~\cite{ctubes}. Unlike the Cooper pairs, they do not transport charge or mass but only energy~\cite{grossnev}. 
 % put a Graphic here
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=0.35\linewidth]{exciton_gap.png}}
@@ -25,7 +25,7 @@ In recent years, there has been a renewed interest in investigating excitons due
 % On the lattice?
 % Different models for excitons
 
-In this work, we apply the Hubbard model onto a hexagonal lattice which is a model of graphene (see Section \ref{sec:lattice}). We are looking for the appearance of an electron-hole bound state. This will be done by measuring the binding energy of the correlation functions ratio
+In this work, we apply the Hubbard model onto a hexagonal lattice which is a model of graphene (see \cref{sec:lattice}). We are looking for the appearance of an electron-hole bound state. This will be done by measuring the binding energy of the correlation functions ratio
 \begin{equation}
     \Delta E = E_{e-h} - (E_e + E_h)
     \label{eq:binding_energy}
@@ -42,7 +42,7 @@ The tight-binding with on-site interaction Hamiltonian describes the hopping of 
 \begin{equation}
     H = - \sum_{xy} \left( a^\dagger_{x,\uparrow} K_{xy} a_{y,\uparrow} + a^\dagger_{x,\downarrow} K_{xy} a_{y,\downarrow} \right) - \frac{1}{2} \sum_{x,y} \left( (n^\dagger_{x,\uparrow} - n^\dagger_{x,\downarrow}) V_{xy} (n^\dagger_{y,\uparrow} - n^\dagger_{y,\downarrow}) \right)
 \end{equation}
-where the first term is the kinetic and the second is the interaction; $a^\dagger$, $a$ are the creation and annihilation operators respectively of electrons, $\uparrow$ is indicating spin-up and $\downarrow$ is spin-down, $K$ is called the hopping matrix which describes the hopping between sites, the interaction term is represented by the potential $V$, and $n_{x,s} = a^\dagger_{x,s} a_{x,s}$ is the electron number density operator. We can make a change of basis~\cite{avoiding}, such that particles are separated by spin and charge, which we call a particle-hole symmetry~\cite{phex1} (see Section \ref{sec:symmetries})
+where the first term is the kinetic and the second is the interaction; $a^\dagger$, $a$ are the creation and annihilation operators respectively of electrons, $\uparrow$ is indicating spin-up and $\downarrow$ is spin-down, $K$ is called the hopping matrix which describes the hopping between sites, the interaction term is represented by the potential $V$, and $n_{x,s} = a^\dagger_{x,s} a_{x,s}$ is the electron number density operator. We can make a change of basis~\cite{avoiding}, such that particles are separated by spin and charge, which we call a particle-hole symmetry~\cite{phex1} (see \cref{sec:symmetries})
 \begin{equation}
     \begin{aligned}
         p^\dagger_x & \equiv a^\dagger_{x,\uparrow} \qquad\qquad h^\dagger_x & \equiv a_{x,\downarrow} \\
@@ -63,7 +63,7 @@ where $p^\dagger (p)$, $h^\dagger (h)$ are the creation(annihilation) operators 
     \end{aligned}
 \end{equation}
 % Particle-hole basis (Creation and annihilation operators)
-The convention for spin and charge that we use for the particles and holes operators is given in Table \ref{tab:convention_operators}.
+The convention for spin and charge that we use for the particles and holes operators is given in \cref{tab:convention_operators}.
 \begin{table}[h]
     \centering
     \begin{tabular}{c|ccc}
@@ -77,7 +77,7 @@ The convention for spin and charge that we use for the particles and holes opera
     \caption{Convention of charge ($Q$), spin ($S$), and third component of spin ($S^3$) used for creation and annihilation operators of particles and holes.}
     \label{tab:convention_operators}
 \end{table}
-Here $Q$, $S$, $S^3$ are the charge, spin, and the third component of the spin respectively. For the two-body correlators (discussed in Section \ref{sec:corr_func}), it is also convenient to know the quantum numbers for different combinations of particle and hole operators. In Table \ref{tab:ph-comb} is given a summary which will be useful in the next chapters. We notice that only the charge and $S^3$ are present in the table. This is due to $Q$ and $S^3$ being additive numbers, whereas the spin is not because two different spin values could have the same third component (ex. $S=0,1;S^3=0$).
+Here $Q$, $S$, $S^3$ are the charge, spin, and the third component of the spin respectively. For the two-body correlators (discussed in \cref{sec:corr_func}), it is also convenient to know the quantum numbers for different combinations of particle and hole operators. In \cref{tab:ph-comb} is given a summary which will be useful in the next chapters. We notice that only the charge and $S^3$ are present in the table. This is due to $Q$ and $S^3$ being additive numbers, whereas the spin is not because two different spin values could have the same third component (ex. $S=0,1;S^3=0$).
 \begin{table}[h]
     \centering
     \begin{tabular}{c|cc}
@@ -107,11 +107,11 @@ here we have added a new index to the number density operators which indicates w
 
 Finally, we can expand our Hamiltonian with one more term, which is called the chemical potential term, where $\mu$ is the chemical potential. It accounts for the change of the number of particles and holes
 \begin{equation}
-    H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + h^\dagger_x K_{xy} h_y \right) + \frac{1}{2}\sum_{xy} q_x V_{xy} q_y - \sum_{x} \mu_x q_x
+    H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + h^\dagger_x K_{xy} h_y \right) + \frac{1}{2}\sum_{xy} q_x V_{xy} q_y - \sum_{x} \mu_x q_x,
 \end{equation}
 and we have introduced one more operator $q_x = n_{x,p} - n_{x,h}$. This is the charge operator that indicates the relative charge on each site. 
 
-The Hamiltonian of this model for our ease can be divided into two parts -- the half-filling part of the whole Hamiltonian and the chemical potential part. The former contains the kinetic and the interaction terms, whereas the latter in made out of only the chemical term. In the case of bipartite lattices (Section \ref{sec:lattice}), we must be able to differentiate on which lattice sites the operators are. This could be done by modifying the transformation (\ref{eq:ph-switch}) to include site dependent sign $\sigma_k$ for holes
+The Hamiltonian of this model for our ease can be divided into two parts -- the half-filling part of the whole Hamiltonian and the chemical potential part. The former contains the kinetic and the interaction terms, whereas the latter in made out of only the chemical term. In the case of bipartite lattices (\cref{sec:lattice}), we must be able to differentiate on which lattice sites the operators are. This could be done by modifying the transformation (\cref{eq:ph-switch}) to include site dependent sign $\sigma_k$ for holes
 \begin{equation}
     H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y \right) + \frac{1}{2}\sum_{xy} q_x V_{xy} q_y - \sum_{x} \mu_x q_x.
 \end{equation}
@@ -121,7 +121,7 @@ To get to the Hamiltonian that we work with, we choose to have only contact inte
     H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y \right) + \frac{U}{2}\sum_{xy} q^2_x - \sum_{x} \mu_x q_x.
     \label{eq:hubbard_ham}
 \end{equation}
-In this thesis work we sometimes work with the chemical potential, and sometimes we set $\mu = 0$, depending on the symmetries that we use \cite{avoiding}. On Figure \ref{fig:hub_scheme} is shown a schematic of the Hubbard model's hopping and interaction.
+In this thesis work we sometimes work with the chemical potential, and sometimes we set $\mu = 0$, depending on the symmetries that we use \cite{avoiding}. On \cref{fig:hub_scheme} is shown a schematic of the Hubbard model's hopping and interaction.
 \begin{figure}[h]
     \begin{center}
         \begin{tikzpicture}
@@ -155,16 +155,16 @@ In this thesis work we sometimes work with the chemical potential, and sometimes
 % Problems
 The theory that we are working with as mentioned before is a model of the real physical systems. Even though the HM gives us good results, one must know some drawbacks of the model. One is that it neglects the long range part of the Coulomb forces. It is likely that significant effects are missed by this simplification~\cite{mott}. Another weakness of this model it has difficulties being applied to transition metals. And the Hubbard model cannot be exactly solved, so approximations must be used.
 
-Despite having these issues, the two-dimensional HM has showed promising results when applied to honeycomb lattices. The description of the electronic structure when applied resembles that of the carbon nano structures, such as graphene, carbon nano tubes, and ribbons~\cite{graphhmc}.
+Despite having these issues, the two-dimensional HM has showed promising results when applied to honeycomb lattices. The description of the electronic structure when applied resembles that of the carbon nanostructures, such as graphene, carbon nanotubes, and ribbons~\cite{graphhmc}.
 % Examples of Hubbard model
 % Solutions to the model (Exact, not so exact)
 
 % The next part should be tested more
-An exact solution to the Hubbard model Hamiltonian exists only in the one dimensional case~\cite{hubexact}, as well as the non-interacting case at half filling. Even though, the data and analysis are done with the full Hamiltonian, it is always helpful to know the behavior of the model in the non-interacting case. The pattern that emerges is usually kept in the interacting case, and this will give us something to compare to. Since we are applying HM on the hexagonal lattice (see Section \ref{sec:lattice}), we have the following two-band dispersion relation
+An exact solution to the Hubbard model Hamiltonian exists only in the one dimensional case~\cite{hubexact}, as well as the non-interacting case at half filling for 2D case. Even though, the data and analysis are done with the full Hamiltonian, it is always helpful to know the behavior of the model in the non-interacting case. The pattern that emerges is usually kept in the interacting case, and this will give us something to compare to. Since we are applying HM on the hexagonal lattice (see \cref{sec:lattice}), we have the following two-band dispersion relation
 \begin{equation}
     E_{\vec{k}\pm} = \pm (-\kappa) \sqrt{3 + 2 \left( \cos\left( \frac{3}{2}k_x + \frac{\sqrt{3}}{2}k_y \right) + \cos\left( \frac{3}{2}k_x - \frac{\sqrt{3}}{2}k_y \right) + \cos\left( \sqrt{3}k_y \right) \right)},
 \end{equation}
-where $k$ is the momentum mode and $\kappa$ is the hopping parameter. In Figure \ref{fig:two-band}, it is shown how the exact solution of the band structure looks like for infinite and finite volume lattices. One notices that for infinite lattice volume the momentum modes are continuously filled, and the model gets the full symmetry of the lattice. Whereas in the finite volume regime only a finite number of momentum modes are available to us. The symmetry is also kept in the finite volume regime with lattices that have $L_1 = L_2$; and for every other configuration of hexagonal lattice, the full symmetry is broken to other symmetries. We expect to keep the two-band structure, even if we add the interaction term and chemical potential term. Therefore, we must add a ($\pm$) label to the ladder operators indicating the band that they are applied to. For further information on the symmetries of the lattice and the model, see Chapter \ref{sec:symmetries}.
+where $k$ is the momentum mode and $\kappa$ is the hopping parameter. In \cref{fig:two-band}, it is plotted the exact solution of the energies for infinite and finite volume lattices. One notices that for infinite lattice volume the momentum modes are continuously filled, and the model gets the full symmetry of the lattice. Whereas in the finite volume regime only a finite number of momentum modes are available to us. The symmetry is also kept in the finite volume regime with lattices that have $L_1 = L_2$; but for every other size configuration of hexagonal lattice, the full symmetry is broken down to subgroups. We keep the two-band structure, even if we add the interaction term and chemical potential term, because this structure is due to the two site unit cell of the lattice (\ref{sec:lattice}). Therefore, we must add a ($\pm$) label to the ladder operators indicating the band that they are applied to. For further information on the symmetries of the lattice and the model, see \cref{sec:symmetries}.
 % Creation and annihilation operators convention
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=0.5\linewidth]{two-band-structure.png}}
@@ -174,7 +174,7 @@ where $k$ is the momentum mode and $\kappa$ is the hopping parameter. In Figure 
 \end{figure}
 
 
-\section{Corelation Functions}
+\section{Correlation Functions}
 \label{sec:corr_func}
 
 The correlation functions (correlators) that we are interested in ($\langle \mathcal{O}_{x,t+\tau}\mathcal{O}^\dagger_{y,t} \rangle$), are called Euclidean correlators. They are defined as a thermal trace
@@ -217,7 +217,7 @@ where $\mathfrak{u}_{\alpha xn}$ and $\mathfrak{u}_{ ny\alpha}$ are the overlap 
 \end{equation}
 where $\Delta E_n = E_n - E_\Omega$, and $\Omega$ denotes the lowest energy state (vacuum state)~\cite{evan, mott}.
 
-Another way to express the two-point correlator is by transforming (\ref{eq:corr_trerm}) to a Euclidean path integral~\cite{discret1,discret2}. We start with representing the two-point correlation function as a path integral
+Another way to express the two-point correlator is by transforming (\cref{eq:corr_trerm}) to a Euclidean path integral~\cite{discret1,discret2}. We start with representing the two-point correlation function as a path integral
 \begin{equation}
     \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle = \frac{1}{Z} \int \mathcal{D}\psi\mathcal{D}\eta e^{-(\psi_\alpha\psi^*_\alpha + \eta_\alpha\eta^*_\alpha)} \langle -\psi,-\eta | \mathcal{O}_x\mathcal{O}^\dagger_y e^{-\beta H} | \psi,\eta \rangle
 \end{equation}
@@ -225,7 +225,7 @@ Assuming $\beta$ to be a time extent, thus we can discretize it by separating it
 \begin{equation}
     e^{-\beta H} = e^{-\delta H}e^{-\delta H}\dots e^{-\delta H}\qquad(\delta = \frac{\beta}{Nt})
 \end{equation}
-Moreover, we want to discretize the Hamiltonian (\ref{eq:hubbard_ham}). Due to fermions obeying anti-commutation relations, we must use Grassman variables and the Hubbard-Stratonovich transformations to obtain
+Moreover, we want to discretize the Hamiltonian (\cref{eq:hubbard_ham}). Due to fermions obeying anti-commutation relations, we must use Grassman variables and the Hubbard-Stratonovich transformations to obtain
 \begin{equation}
     \begin{aligned}
         C_{xy}(\tau) = \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-\frac{\phi^2_t}{2\delta U}}\times \det(M[\phi])\det(M[-\phi]) \left(\mathcal{O}_x\mathcal{O}^\dagger_y\right)_{Wick}
@@ -242,11 +242,11 @@ $\mathcal{Z}$ is the partition function defined as
 \begin{equation}
     \mathcal{Z} = \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]};
 \end{equation}
-the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) \cite{gattringer}. As this is very important to the part where we generate data, we will explicitly work out the examples with which will will work -- one for a one-body correlation function and the other two for a two-body correlator with one and two Wick contractions.
+the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) \cite{gattringer}. As this is very important to the part where we generate data, we will explicitly work out the examples with which will work -- one for a one-body correlation function and the other two for a two-body correlator with one and two Wick contractions.
 
 \begin{itemize}
     \item \textbf{One-body correlation function}\\
-    We start by substituting the general operator $\mathcal{O}$ with the particle ladder operator $p$ and their adjoints. Then, we construct the correlation function and use Wick's theorem to perform the contractions
+    We start by substituting the general operator $\mathcal{O}$ with the particle ladder operator $p$ and their adjoint. Then, we construct the correlation function and use Wick's theorem to perform the contractions
     \begin{equation}
         \begin{aligned}
             \langle p_{x}p^\dagger_{y} \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(p_{x}p^\dagger_{y}\right)_{Wick} 
@@ -257,7 +257,7 @@ the label $Wick$ indicates that all possible Wick contractions must be performed
     where $x$,$y$ denote the position of the particle and $M[\phi]$ is the fermion matrix. The same derivation can be performed for $\langle h_xh^\dagger_y\rangle$.
     
     \item \textbf{Two-body correlation function}\\
-    In this example, we want to show what the Wick contractions are for composite operators. We start again by substituting the general operators from (\ref{eq:path-int}) with $pp$ and the adjoint. Then, we expand the $\left(\dots\right)_{Wick}$, and finally we substitute $M[\phi]^{-1}$ in each term
+    In this example, we want to show what the Wick contractions are for composite operators. We start again by substituting the general operators from (\cref{eq:path-int}) with $pp$ and the adjoint. Then, we expand the $\left(\dots\right)_{Wick}$, and finally we substitute $M[\phi]^{-1}$ in each term
     \begin{equation}
         \begin{aligned}
             \langle p_{1,x}p_{2,x'}p^\dagger_{3,y}p^\dagger_{4,y'} \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(p_{1,x}p_{2,x'}p^\dagger_{3,y}p^\dagger_{4,y'}\right)_{Wick} 
@@ -282,7 +282,7 @@ the label $Wick$ indicates that all possible Wick contractions must be performed
     where the number labels indicate which operators are replaced with the fermion propagator; the relative minus sign between the terms is due to the odd permutation.
 \end{itemize}
 
-The representation of the correlation functions as path integral is as mentioned important to us because we have a way to generate the correlation functions~\cite{graphhmc}. This can be done by numerically solving the integrals using stochastic methods (see Section \ref{sec:hmc}) for Gausian integration. Then, it is possible to extract the energies of the correlators if we fit (\ref{eq:fit_exponent}) for different $\beta$ and volumes, and, finally, extrapolate to zero temperature (\ref{eq:beta_lim}) and infinite volume. This will give us the result we are looking for.
+The representation of the correlation functions as path integral is as mentioned important to us because we have a way to generate the correlation functions~\cite{graphhmc}. This can be done by numerically solving the integrals using stochastic methods (see \cref{sec:hmc}) for Gaussian integration. Then, it is possible to extract the energies of the correlators if we fit (\cref{eq:fit_exponent}) for different $\beta$ and volumes, and, finally, extrapolate to zero temperature (\cref{eq:beta_lim}) and infinite volume. This will give us the result we are looking for.
 
 % One particle gap
 
