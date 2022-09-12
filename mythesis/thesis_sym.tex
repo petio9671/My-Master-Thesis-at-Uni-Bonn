@@ -5,9 +5,9 @@
 \label{sec:symmetries}
 %==============================================================================
 
-A very important aspect of the analysis are the symmetries. They let us extract useful information from the available data. We can leverage the symmetries we have found, so that we can reduce the numerical uncertainties of our data by averaging, or we can reduce the computational cost by declaring two results are the same by symmetry~\cite{evan}. The term means any operation one can perform on an operator that leaves it invariant.
+A very important aspect of the analysis are the symmetries. They let us extract useful information from the available data. We can leverage the symmetries we have found, so that we can reduce the numerical uncertainties of our data by averaging, or we can reduce the computational cost by declaring two results are the same by symmetry~\cite{evan}.
 
-In this chapter we will see what is the symmetry of the lattice, which transformations are symmetry operators of the Hubbard model Hamiltonian, and how they transform the correlation functions that we are interested in. This will help us better our data and the results we extract from it.
+In this chapter we will see what is the symmetry of the lattice, which transformations are symmetry operators of the Hubbard model Hamiltonian, and how they transform the correlation functions that we are interested in. This will help us improve our data and the results we extract from it.
 
 \section{Lattice}
 \label{sec:lattice}
@@ -19,12 +19,12 @@ The honeycomb lattice is a 2D lattice where the points of the primitive cell lie
   \begin{pmatrix}
     \sqrt{3} \\
     +1
-  \end{pmatrix} \qquad \qquad
+  \end{pmatrix}, \qquad \qquad
   \vec{a}_2 = \frac{\sqrt{3}}{2}
   \begin{pmatrix}
     \sqrt{3} \\
     -1
-  \end{pmatrix}
+  \end{pmatrix}.
 \end{equation}
 By repeating them $L_1$ and $L_2$ times respectively, we can construct the whole finite sublattice. The other one can be constructed simply by offsetting the points with a translation vector $\vec{r} = \pm(\vec{a}_1 + \vec{a}_2)$. On \cref{fig:bipartite} is shown the bipartite of the hexagonal lattice.
 \begin{figure}
@@ -75,7 +75,7 @@ By repeating them $L_1$ and $L_2$ times respectively, we can construct the whole
 \end{figure}
 
 % Write what the symmetries of the lattice are
-In order to investigate the symmetry operators and how they transform the correlation functions, we work with the reciprocal lattice. The primitive cell of the reciprocal is called Brillouin zone (BZ). Some points on the lattice which are of special interest have labels that are used in the literature and in this thesis. These are the center of the first Brillouin zone called the Gamma point ($\Gamma$), the two points on the vertices of the BZ called the Dirac points ($K, K'$), and the three middle of the edges of the BZ points $M, M', M''$. They are all shown on \cref{fig:points} as well as the first neighbors. The graph shows that the first BZ exhibits all the symmetries of the lattice, since the plane wave with a specific mode outside the 1st BZ is exactly equal to a plane wave with a momentum inside the BZ. Therefore, we do not need to investigate beyond it. So, we consider only the first Brillouin zone in our calculations.
+In order to investigate the symmetry operators and how they transform the correlation functions, we work with the reciprocal lattice. The primitive cell of the reciprocal is called Brillouin zone (BZ). Some points on the lattice which are of special interest have labels that are used in the literature and in this thesis. These are the center of the first Brillouin zone called the Gamma point ($\Gamma$), the two points on the vertices of the BZ called the Dirac points ($K, K'$), and the three middle of the edges of the BZ points $M, M', M''$. They are all shown on \cref{fig:points}, as well as their neighbors. The graph shows that the first BZ exhibits all the symmetries of the lattice, since the plane wave with a specific mode outside the 1st BZ is exactly equal to a plane wave with a momentum inside the BZ. Therefore, we do not need to investigate beyond it. So, we consider only the first Brillouin zone in our calculations.
 \begin{figure}
 \begin{center}
   \begin{tikzpicture}
@@ -162,17 +162,17 @@ In order to investigate the symmetry operators and how they transform the correl
 \end{figure}
 % Group theory (dihhedral group, little group)
 % Average points of the same symmetry operation 
-The primitive cell of the reciprocal lattice of the honeycomb is a hexagon, meaning it must have all the symmetries of the dihedral group. The result is that each set of momenta that is related by symmetry of the lattice can be averaged (e.g. $K$ with $K'$, $M$ with $M'$ and $M''$, etc.). The key moment here is that we have not used any model here. This is only due to the symmetry of the lattice itself. Therefore, this averaging of momenta could be performed anytime, but the group symmetry operations are lattice dependent (Square, Honeycomb, Kagome, and others).
+The primitive cell of the reciprocal lattice of the honeycomb is a hexagon, meaning it must have all the symmetries of the dihedral group. The result is that each set of momenta that is related by symmetry of the lattice can be averaged (e.g., $K$ with $K'$, $M$ with $M'$ and $M''$, etc.). The key moment here is that we have not used any model here. This is only due to the symmetry of the lattice itself. Therefore, this averaging of momenta could be performed anytime, but the group symmetry operations are lattice dependent (Square, Honeycomb, Kagome, and others).
 
 \section{Symmetry Operators}
 \label{sec:sym-oper}
-In this section, we are going to focus only on transformation that do not change the Hamiltonian in general or at half filling ($\mu=0$) i.e. symmetry operations which means they commute with it 
+In this section, we are going to focus only on transformation that do not change the Hamiltonian in general or at half filling ($\mu=0$), i.e., symmetry operations which means they commute with it 
 \begin{equation}
   [H,R] = 0.
 \end{equation}
 We can show that the expectation value of the operator does not change when we apply the symmetry to it.
 \begin{equation}
- \langle \mathcal{O} \rangle = \frac{1}{Z} tr[\mathcal{O}R^{-1}Re^{-\beta H}] = \frac{1}{Z} tr[\mathcal{O}R^{-1}e^{-\beta H}R] = \frac{1}{Z} tr[R\mathcal{O}R^{-1}e^{-\beta H}] = \langle R\mathcal{O}R^{-1} \rangle
+ \langle \mathcal{O} \rangle = \frac{1}{Z} tr[\mathcal{O}R^{-1}Re^{-\beta H}] = \frac{1}{Z} tr[\mathcal{O}R^{-1}e^{-\beta H}R] = \frac{1}{Z} tr[R\mathcal{O}R^{-1}e^{-\beta H}] = \langle R\mathcal{O}R^{-1} \rangle.
 \end{equation}
 For our chosen model, there are only a few symmetry operators that satisfy this condition. We are going to see how they can be used to our advantage to increase our statistics~\cite{evan}.
 
@@ -247,17 +247,19 @@ On a bipartite lattice, we have a spin-flip operation that exchanges the particl
 
 When applied onto the creation/annihilation operators of the particles and the holes, this spin transformation gives us
 
-\begin{align*}
-  IpI^{-1} &= \Sigma h^\dagger = h^\dagger \Sigma & IhI^{-1} &= \Sigma p^\dagger = p^\dagger \Sigma \\
-  Ip^\dagger I^{-1} &= \Sigma h = h \Sigma & Ih^\dagger I^{-1} &= \Sigma p = p \Sigma
-\end{align*}
+\begin{equation}
+  \begin{aligned}
+    IpI^{-1} &= \Sigma h^\dagger = h^\dagger \Sigma, & IhI^{-1} &= \Sigma p^\dagger = p^\dagger \Sigma, \\
+    Ip^\dagger I^{-1} &= \Sigma h = h \Sigma, & Ih^\dagger I^{-1} &= \Sigma p = p \Sigma,
+  \end{aligned}
+\end{equation}
 where $\Sigma$ is a matrix which shows us the behavior of the bipartite lattice
 \begin{equation}
-  \Sigma_{xy} = (-1)^x\delta_{xy}
+  \Sigma_{xy} = (-1)^x\delta_{xy}.
 \end{equation}
-We can check if this symmetry commutes with the Hamiltonian by first showing that it leaves the charge invariant,
+We can check if this symmetry commutes with the Hamiltonian by first showing that it leaves the charge invariant
 \begin{equation}
-  IqI^{-1} = Ip^\dagger I^{-1}IpI^{-1} - Ih^\dagger I^{-1}IhI^{-1} = h\Sigma\Sigma h^\dagger - p\Sigma\Sigma p^\dagger = (1 - h^\dagger h) - (1 - p^\dagger p) = p^\dagger p - h^\dagger h = q
+  IqI^{-1} = Ip^\dagger I^{-1}IpI^{-1} - Ih^\dagger I^{-1}IhI^{-1} = h\Sigma\Sigma h^\dagger - p\Sigma\Sigma p^\dagger = (1 - h^\dagger h) - (1 - p^\dagger p) = p^\dagger p - h^\dagger h = q.
   \label{eq:spin-charge}
 \end{equation}
 It can also be shown that the third component of the spin gets flipped after we apply this operator
@@ -269,26 +271,30 @@ where
   s^3_x = \frac{1}{2}\left(\delta_{xx} - p^\dagger_x p_x - h^\dagger_x h_x\right)
 \end{equation}
 Finally, it is important to see how the hopping term transforms under this symmetry operation
-\begin{align*}
-  I\left( -\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y\right) I^{-1} &= -\sum_{xy} I p^\dagger_x I^{-1}I K_{xy} I^{-1}I p_y I^{-1} + \sigma_k I h^\dagger_x I^{-1}I K_{xy} I^{-1}I h_y I^{-1}
-  \\
-  &= -\sum_{xy}  h_x (\Sigma I K I^{-1}\Sigma)_{xy} h^\dagger_y + \sigma_k p_x (\Sigma I K I^{-1}\Sigma)_{xy} p^\dagger_y
-  \\
-  &= -\sum_{xy} -(\delta_{xy} (I K I^{-1})_{xy} - h^\dagger_y (I K I^{-1})_{xy} h_x) -
-  \\
-  &- \sigma_k (\delta_{xy} (I K I^{-1})_{xy} - p^\dagger_y (I K I^{-1})_{xy} p_x)
-  \\
-  &= \sigma_k \left[-\sum_{xy} p^\dagger_x (I K I^{-1})^\top_{xy} p_y + \sigma_k h^\dagger_x (I K I^{-1})^\top_{xy} h_y \right]
-\end{align*}
-where $\Sigma K \Sigma = -K$, $tr[K] = 0$, and $\sigma^2_k = 1$. In general, to return to our initial hopping term, we need $I$ to be anti-unitary where $IKI^{-1} = K^*$, and then we could replace $K^\dagger\rightarrow K$. Since we are working on a bipartite lattice, $K$ is a real valued matrix, resulting in $IKI^{-1} = K$ and $K^\dagger = K^* = K^\top = K$; we can choose $\sigma_k = 1$ because of the Honeycomb, which even for $\mu \neq 0$ gives us the commutator $[H - \vec{\mu}\cdot\vec{q}, I] = 0$. This is true because as shown in (\cref{eq:spin-charge}) the charge is even in relation to the spin-flip symmetry operation.
+\begin{equation}
+  \begin{aligned}
+    I\left( -\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y\right) I^{-1} &= -\sum_{xy} I p^\dagger_x I^{-1}I K_{xy} I^{-1}I p_y I^{-1} + \sigma_k I h^\dagger_x I^{-1}I K_{xy} I^{-1}I h_y I^{-1}
+    \\
+    &= -\sum_{xy}  h_x (\Sigma I K I^{-1}\Sigma)_{xy} h^\dagger_y + \sigma_k p_x (\Sigma I K I^{-1}\Sigma)_{xy} p^\dagger_y
+    \\
+    &= -\sum_{xy} -(\delta_{xy} (I K I^{-1})_{xy} - h^\dagger_y (I K I^{-1})_{xy} h_x) -
+    \\
+    &- \sigma_k (\delta_{xy} (I K I^{-1})_{xy} - p^\dagger_y (I K I^{-1})_{xy} p_x)
+    \\
+    &= \sigma_k \left[-\sum_{xy} p^\dagger_x (I K I^{-1})^\top_{xy} p_y + \sigma_k h^\dagger_x (I K I^{-1})^\top_{xy} h_y \right],
+  \end{aligned}
+\end{equation}
+in which $\Sigma K \Sigma = -K$, $tr[K] = 0$, and $\sigma^2_k = 1$. In general, to return to our initial hopping term, we need $I$ to be anti-unitary where $IKI^{-1} = K^*$, and then we could replace $K^\dagger\rightarrow K$. Since we are working on a bipartite lattice, $K$ is a real valued matrix, resulting in $IKI^{-1} = K$ and $K^\dagger = K^* = K^\top = K$; we can choose $\sigma_k = 1$ because of the Honeycomb, which even for $\mu \neq 0$ gives us the commutator $[H - \vec{\mu}\cdot\vec{q}, I] = 0$. This is true because as shown in \cref{eq:spin-charge} the charge is even in relation to the spin-flip symmetry operation.
 
 \subsection{Charge transformation}
 
 Another symmetry we can consider is the charge symmetry operation. It exchanges the charges but leaves the spin fixed. When applied onto the creation and annihilation operators, it transforms them as 
-\begin{align*}
-  CpC^{-1} &= h & ChC^{-1} &= p \\
-  Cp^\dagger C^{-1} &= h^\dagger & Ch^\dagger C^{-1} &= p^\dagger
-\end{align*}
+\begin{equation}
+  \begin{aligned}
+    CpC^{-1} &= h, & ChC^{-1} &= p, \\
+    Cp^\dagger C^{-1} &= h^\dagger, & Ch^\dagger C^{-1} &= p^\dagger.
+  \end{aligned}
+\end{equation}
 On \cref{fig:charge-flip} is shown how the charge and spin of all creation/annihilation operators transform under this symmetry operation.
 \begin{figure}
   \begin{center}
@@ -365,13 +371,15 @@ and when conjugated with the spin operator
 \end{equation}
 so the spin is fixed for this operation. Again, we want to calculate the conjugation of the tight-binding term in the Hamiltonian with the charge-flip operator
 
-\begin{align*}
-  C\left( -\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y\right) C^{-1} &= -\sum_{xy} C p^\dagger_x C^{-1}C K_{xy} C^{-1}C p_y C^{-1} + \sigma_k C h^\dagger_x C^{-1}C K_{xy} C^{-1}C h_y C^{-1}
-  \\
-  &= -\sum_{xy}  h^\dagger_x (C K C^{-1})_{xy} h_y + \sigma_k p^\dagger_x (C K C^{-1})_{xy} p_y
-  \\
-  &= -\sum_{xy}  \sigma_k p^\dagger_x (C K C^{-1})_{xy} p_y + h^\dagger_x (C K C^{-1})_{xy} h_y
-\end{align*}
+\begin{equation}
+  \begin{aligned}
+    C\left( -\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y\right) C^{-1} &= -\sum_{xy} C p^\dagger_x C^{-1}C K_{xy} C^{-1}C p_y C^{-1} + \sigma_k C h^\dagger_x C^{-1}C K_{xy} C^{-1}C h_y C^{-1}
+    \\
+    &= -\sum_{xy}  h^\dagger_x (C K C^{-1})_{xy} h_y + \sigma_k p^\dagger_x (C K C^{-1})_{xy} p_y
+    \\
+    &= -\sum_{xy}  \sigma_k p^\dagger_x (C K C^{-1})_{xy} p_y + h^\dagger_x (C K C^{-1})_{xy} h_y,
+  \end{aligned}
+\end{equation}
 where if we choose $CKC^{-1} = K$, we get to the initial term. Therefore, we are shown that on a bipartite lattice where we can choose $\sigma_k = +1$, we have a charge conjugation symmetry i.e. it commutes with the tight-binding Hamiltonian $[H,C] = 0$. This is because as shown in (\cref{eq:charge-charge}) the charge operator is flipped, but the interaction is even under this transformation because it is of the form $qVq$.
 
 \subsection{Particle-hole transformation}
@@ -381,46 +389,55 @@ The particle-hole symmetry operator is a combination of two symmetry operators t
 In order to convince ourselves of the neat transformation and also the commutation of the Hamiltonian with the symmetry operator, we should first see how the constituent operators transform the Hubbard model Hamiltonian.
 
 First, we look at the staggering operator $X$. It transforms the creation/annihilation operators like
-\begin{align*}
-  Xp^\dagger X^{-1} &= \Sigma p^\dagger = p^\dagger \Sigma & Xh^\dagger X^{-1} &= \Sigma h^\dagger = h^\dagger \Sigma \\
-  Xp X^{-1} &= \Sigma p = p \Sigma & XhX^{-1} &= \Sigma h = h \Sigma
-\end{align*}
+\begin{equation}
+  \begin{aligned}
+    Xp^\dagger X^{-1} &= \Sigma p^\dagger = p^\dagger \Sigma, & Xh^\dagger X^{-1} &= \Sigma h^\dagger = h^\dagger \Sigma, \\
+    Xp X^{-1} &= \Sigma p = p \Sigma, & XhX^{-1} &= \Sigma h = h \Sigma.
+  \end{aligned}
+\end{equation}
 It leaves the charge, spin, and number operators invariant, but it flips the sign of the hopping term
 
-\begin{align*}
-  X\left( -\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y\right) X^{-1} &= -\sum_{xy} X p^\dagger_x X^{-1}X K_{xy} X^{-1}X p_y X^{-1} + \sigma_k X h^\dagger_x X^{-1}X K_{xy} X^{-1}X h_y X^{-1}
-  \\
-  &= -\sum_{xy}  p^\dagger_x (\Sigma X K X^{-1}\Sigma)_{xy} p_y + \sigma_k h^\dagger_x (\Sigma X K X^{-1}\Sigma)_{xy} h_y
-  \\
-  &= -\sum_{xy}  p^\dagger_x (\Sigma K \Sigma)_{xy} p_y + \sigma_k h^\dagger_x (\Sigma K \Sigma)_{xy} h_y
-  \\
-  &= -\left[-\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y \right]
-\end{align*}
+\begin{equation}
+  \begin{aligned}
+    X\left( -\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y\right) X^{-1} &= -\sum_{xy} X p^\dagger_x X^{-1}X K_{xy} X^{-1}X p_y X^{-1} + \sigma_k X h^\dagger_x X^{-1}X K_{xy} X^{-1}X h_y X^{-1}
+    \\
+    &= -\sum_{xy}  p^\dagger_x (\Sigma X K X^{-1}\Sigma)_{xy} p_y + \sigma_k h^\dagger_x (\Sigma X K X^{-1}\Sigma)_{xy} h_y
+    \\
+    &= -\sum_{xy}  p^\dagger_x (\Sigma K \Sigma)_{xy} p_y + \sigma_k h^\dagger_x (\Sigma K \Sigma)_{xy} h_y
+    \\
+    &= -\left[-\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y \right].
+  \end{aligned}
+\end{equation}
 
 The other operator that we consider is the one that "flips" the dagger of the operators. It transforms the particle/hole operators as
 
-\begin{align*}
-  FpF^{-1} &= p^\dagger & FhF^{-1} &= h^\dagger \\
-  Fp^\dagger F^{-1} &= p & Fh^\dagger F^{-1} &= h
-\end{align*}
-
+\begin{equation}
+  \begin{aligned}
+    FpF^{-1} &= p^\dagger, & FhF^{-1} &= h^\dagger, \\
+    Fp^\dagger F^{-1} &= p, & Fh^\dagger F^{-1} &= h.
+  \end{aligned}
+\end{equation}
 When applied onto the charge operator, it flips the sign $q \rightarrow -q$ which is shown below
 
 \begin{equation}
-  FqF^{-1} = Fp^\dagger F^{-1}FpF^{-1} - Fh^\dagger F^{-1}FhF^{-1} = p p^\dagger - h h^\dagger = (1 - p^\dagger p) - (1 - h^\dagger h) = -q
+  FqF^{-1} = Fp^\dagger F^{-1}FpF^{-1} - Fh^\dagger F^{-1}FhF^{-1} = p p^\dagger - h h^\dagger = (1 - p^\dagger p) - (1 - h^\dagger h) = -q.
 \end{equation}
 This in turn means that this symmetry operation flips the chemical potential and more importantly the hopping term
-\begin{align*}
-  F\left( -\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y\right) F^{-1} &= -\sum_{xy} F p^\dagger_x F^{-1}F K_{xy} F^{-1}F p_y F^{-1} + \sigma_k F h^\dagger_x F^{-1}F K_{xy} F^{-1}F h_y F^{-1}
-  \\
-  &= -\sum_{xy}  p_x (F K F^{-1})_{xy} p^\dagger_y + \sigma_k h_x (F K F^{-1})_{xy} h^\dagger_y
-  \\
-  &= -\sum_{xy} (\delta_{xy} (F K F^{-1})_{xy} - p^\dagger_y (F K F^{-1})_{xy} p_x) + \sigma_k (\delta_{xy} (F K F^{-1})_{xy} - h^\dagger_y (F K F^{-1})_{xy} h_x)
-  \\
-  &= - \left[ - \sum_{xy} p^\dagger_y (F K F^{-1})_{xy} p_x + \sigma_k h^\dagger_y (F K F^{-1})_{xy} h_x \right]
-  \\
-  &= - \left[ - \sum_{xy} p^\dagger_x (F K F^{-1})^\top_{xy} p_y + \sigma_k h^\dagger_x (F K F^{-1})^\top_{xy} h_y \right]
-\end{align*}
+\begin{equation}
+  \resizebox{\hsize}{!}{
+  $\begin{aligned}
+    F\left( -\sum_{xy} p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y\right) F^{-1} &= -\sum_{xy} F p^\dagger_x F^{-1}F K_{xy} F^{-1}F p_y F^{-1} + \sigma_k F h^\dagger_x F^{-1}F K_{xy} F^{-1}F h_y F^{-1}
+    \\
+    &= -\sum_{xy}  p_x (F K F^{-1})_{xy} p^\dagger_y + \sigma_k h_x (F K F^{-1})_{xy} h^\dagger_y
+    \\
+    &= -\sum_{xy} (\delta_{xy} (F K F^{-1})_{xy} - p^\dagger_y (F K F^{-1})_{xy} p_x) + \sigma_k (\delta_{xy} (F K F^{-1})_{xy} - h^\dagger_y (F K F^{-1})_{xy} h_x)
+    \\
+    &= - \left[ - \sum_{xy} p^\dagger_y (F K F^{-1})_{xy} p_x + \sigma_k h^\dagger_y (F K F^{-1})_{xy} h_x \right]
+    \\
+    &= - \left[ - \sum_{xy} p^\dagger_x (F K F^{-1})^\top_{xy} p_y + \sigma_k h^\dagger_x (F K F^{-1})^\top_{xy} h_y \right]
+  \end{aligned}$
+  }
+\end{equation}
 where $tr[K] = 0$, if we want to return to the original hopping term then we have to choose $F K F^{-1} = K^*$, and then we can substitute $K^\dagger \rightarrow K$. We see on  \cref{fig:dagger-flip} an example of the dagger-flip operator switching the signs of the charge and the spin.
 \begin{figure}
   \begin{center}
@@ -649,11 +666,11 @@ We start with the $\langle pp^\dagger \rangle$ correlation function which we can
     \corp{+}{+} & \corp{+}{-} \\
     \corp{-}{+} & \corp{-}{-}
   \end{array}
-  \right] _{\vec{k}} (\tau)
+  \right] _{\vec{k}} (\tau).
 \end{equation}
 This matrix of correlators can be calculated and then diagonalized to
 \begin{equation}
-  C_{Q=+1,S=1,S^3=-1,\vec{k}} = \frac{1}{2}\left(C_{\corp{+}{+}} + C_{\corp{-}{-}}\right)\mathds{1} + \frac{1}{2}\left(\sqrt{\left(C_{\corp{+}{+}} - C_{\corp{-}{-}}\right)^2 + 4 C_{\corp{+}{-}}C_{\corp{-}{+}}}\right)\sigma_3
+  C_{Q=+1,S=1,S^3=-1,\vec{k}} = \frac{1}{2}\left(C_{\corp{+}{+}} + C_{\corp{-}{-}}\right)\mathds{1} + \frac{1}{2}\left(\sqrt{\left(C_{\corp{+}{+}} - C_{\corp{-}{-}}\right)^2 + 4 C_{\corp{+}{-}}C_{\corp{-}{+}}}\right)\sigma_3.
 \end{equation}
 In the tight-binding case of the Hamiltonian, the off-diagonal components vanish and the diagonal are equal. However, in general one must be careful because this is discretization dependent. In order to avoid this problem, we must always compute the whole matrix and then diagonalize. The whole argument can also be done for $\langle hh^\dagger\rangle$.
 
@@ -664,7 +681,7 @@ To increase the precision of our data, we apply the symmetry operators that we c
 \end{equation}
 and
 \begin{equation}
-  \tilde{C}_{\vec{k}}(\tau) = \frac{1}{2}\left( \tilde{C}_{QS^3\vec{k}}(\tau) + \tilde{C}_{\overline{Q}S^3\vec{k}}(\tau) \right)
+  \tilde{C}_{\vec{k}}(\tau) = \frac{1}{2}\left( \tilde{C}_{QS^3\vec{k}}(\tau) + \tilde{C}_{\overline{Q}S^3\vec{k}}(\tau) \right).
   \label{eq:full_average}
 \end{equation}
 We could always use \cref{eq:average} to average and be four times more precise and only when $\mu = 0$, we can also use \cref{eq:full_average} for a total of eight times more statistics. After that, one must always diagonalize.
@@ -715,25 +732,25 @@ In this thesis, we are working with only two types of two-body correlators. Ther
     \cor{-}{+}{+}{+} & \cor{-}{+}{+}{-} & \cor{-}{+}{-}{+} & \cor{-}{+}{-}{-} \\
     \cor{-}{-}{+}{+} & \cor{-}{-}{+}{-} & \cor{-}{-}{-}{+} & \cor{-}{-}{-}{-} \\
   \end{array}
-  \right]_{k,q,r,s} (\tau)
+  \right]_{k,q,r,s} (\tau).
   \label{eq:phhpmat}
 \end{equation}
 Now, we apply a different symmetry operator to the two particle correlation function. The derivations of the conjugation with the symmetry operators are always done in two steps. First, we start with the thermal trace and then switch to matrix form, so that it is easier to see the transformations needed in order to get another two particle correlator.
 \\
 \\
 \subsubsection{\underline{Trace Cyclicity}}
-We begin with the trace cyclicity, because it will give us how the correlation function transformations when time reversed.
+We begin with the trace cyclicity because it will give us how the correlation function transforms when time reversed.
 \\
 \begin{equation}
   C_{Q=0,S=1,S^3=-1;k,q,r,s} = \frac{1}{Z}tr\left[p_kh_qe^{-H\tau}h^\dagger_rp^\dagger_se^{-H\left(\beta-\tau\right)}\right] =\
-  \frac{1}{Z}tr\left[h^\dagger_rp^\dagger_se^{-H\left(\beta-\tau\right)}p_kh_qe^{-H\tau}\right]
+  \frac{1}{Z}tr\left[h^\dagger_rp^\dagger_se^{-H\left(\beta-\tau\right)}p_kh_qe^{-H\tau}\right].
 \end{equation}
 Now we apply time reverse
 $$\beta \rightarrow \beta - \tau$$
 and use the anti-commutation relations of the operators to get
 \begin{equation}
   \frac{1}{Z}tr\left[h^\dagger_rp^\dagger_se^{-H\left(\beta-\left(\beta-\tau\right)\right)}p_kh_qe^{-H\left(\beta-\tau\right)}\right]=\\\
-  \frac{1}{Z}tr\left[p^\dagger_sh^\dagger_re^{-H\tau}h_qp_ke^{-H\left(\beta-\tau\right)}\right]
+  \frac{1}{Z}tr\left[p^\dagger_sh^\dagger_re^{-H\tau}h_qp_ke^{-H\left(\beta-\tau\right)}\right].
 \end{equation}
 We switch to matrix form to see observe better how all labels transform
 
@@ -773,7 +790,7 @@ We switch to matrix form to see observe better how all labels transform
     &= C_{Q=0,S=1,S^3=+1;s,r,q,k}
   \end{aligned}
 \end{equation}
-We notice that order reverse is actually composed of two transformations -- particle-hole momentum switch and time reverse. After we stare at the matrix for an hour, we can figure out what the transformation between the correlation functions is
+We notice that order reverse is actually composed of two transformations -- particle-hole momentum switch and time reverse. After we stare at the matrix at least for an hour, we can figure out what the transformation between the correlation functions is
 \begin{equation}
   C_{Q=0,S=1,S^3=-1;k,q,r,s} (\tau) =
   \left[ {\begin{array}{cccc}
@@ -788,7 +805,7 @@ We notice that order reverse is actually composed of two transformations -- part
     0 & 0 & 1 & 0 \\
     0 & 1 & 0 & 0 \\
     0 & 0 & 0 & 1 \\
-  \end{array} } \right]
+  \end{array} } \right].
 \end{equation}
 
 We repeat the steps again for each symmetry operator. First, we start with the thermal trace and then switch to matrix for easy transformations.   \cref{tab:phhp} shows the summary of all symmetries that we have calculated for $\langle phh^\dagger p^\dagger \rangle$ (see \cref{sec:app}).
@@ -823,13 +840,13 @@ For more compact form, we write
     0 & 0 & 1 & 0 \\
     0 & 1 & 0 & 0 \\
     0 & 0 & 0 & 1 \\
-  \end{array} } \right]
+  \end{array} } \right].
 \end{equation}
 
 The other correlation function that we are interested in is with two particles at the source and two at the sink. Again, we start with correlator $\langle ppp^\dagger p^\dagger\rangle$. In trace and matrix forms it look like this
 
 \begin{equation}
-  C_{Q=2,S=1,S^3=-1;k,q,r,s} = \frac{1}{Z}tr\left[p_kp_qe^{-H\tau}p^\dagger_rp^\dagger_se^{-H\left(\beta-\tau\right)}\right]
+  C_{Q=2,S=1,S^3=-1;k,q,r,s} = \frac{1}{Z}tr\left[p_kp_qe^{-H\tau}p^\dagger_rp^\dagger_se^{-H\left(\beta-\tau\right)}\right],
 \end{equation}
 
 \renewcommand{\cor}[4]{p_{#1}p_{#2}p^\dagger_{#3}p^\dagger_{#4}}
@@ -842,14 +859,14 @@ The other correlation function that we are interested in is with two particles a
     \cor{-}{+}{+}{+} & \cor{-}{+}{+}{-} & \cor{-}{+}{-}{+} & \cor{-}{+}{-}{-} \\
     \cor{-}{-}{+}{+} & \cor{-}{-}{+}{-} & \cor{-}{-}{-}{+} & \cor{-}{-}{-}{-} \\
   \end{array}
-  \right]_{k,q,r,s} (\tau)
+  \right]_{k,q,r,s} (\tau).
 \end{equation}
-After a lot of calculations and transformations, we produce   \cref{tab:pppp}, which shows the summary of all symmetry transformations that we derived in \cref{sec:app}. From all symmetries, with our data we can use only the anti-commutation and trace cyclicity, and if we calculate at half-filling, we could use also the $XF$ symmetry. In the worst case, we can make our statistics 8 times better and 16 times better if we work at $\mu = 0$.
+After a lot of calculations and transformations, we produce \cref{tab:pppp}, which shows the summary of all symmetry transformations that we derived in \cref{sec:app}. From all symmetries, with our data we can use only the anti-commutation and trace cyclicity, and if we calculate at half-filling, we could use also the $XF$ symmetry. In the worst case, we can make our statistics 8 times better and 16 times better if we work at $\mu = 0$.
 
 \begin{table}[h]
   \centering
   \begin{tabular}{c|cccccc}
-                    & $Q$ & $S$ & $S^3$ & trafo & $kqrs$    & $\tau$  \\
+                    & $Q$ & $S$ & $S^3$ & \textit{trafo} & $kqrs$    & $\tau$  \\
                     \hline
   Start with        & 2 & 1 & -1 & 1 & 1234 &  $\tau$  \\
   \hline
@@ -899,7 +916,7 @@ Whenever we are dealing with two- and more body systems, we must account for the
     \caption{Example of different momentum shells with their irreducible representations. The number on the left side of "/" in the titles indicates the shell, and on the right side is the irreducible representations of the little group. The head of the pink arrow shows the total momentum $P$; the tail shows $-P$. Only at zero momentum there is a circle. Blue/Red arrows point the relative momentum. The color indicates the phase of the operators (red = $\pi$, blue = 0) and the relative thickness indicates the relative weight of that state.}
     \label{fig:mom_shells}
 \end{figure}
-We construct total momenta shells with different relative momentum in each one. The transformation of the operators is represented by the little group of $\mathcal{G}$ which preserves the total momentum $\vec{P}$. We can find the irreducible representations for each momentum shell (example \cref{fig:mom_shells}). The momentum labeling of the correlation functions can therefore be changed to
+We construct total momenta shells with different relative momentum in each one. The transformation of the operators is represented by the little group of $\mathcal{G}$ which preserves the total momentum $\vec{P}$. We can find the irreducible representations for each momentum shell (example in \cref{fig:mom_shells}). The momentum labeling of the correlation functions can therefore be changed to
 \begin{equation}
   \vec{k},\vec{s} \longrightarrow \vec{P},\vec{p},\rho;
 \end{equation}

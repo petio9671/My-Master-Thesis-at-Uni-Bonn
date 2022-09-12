@@ -38,13 +38,13 @@ Since we have already shown in \cref{ssec:sym-twobody} the transformation of \cr
       \cor{-}{+}{+}{+} & \cor{-}{+}{+}{-} & \cor{-}{+}{-}{+} & \cor{-}{+}{-}{-} \\
       \cor{-}{-}{+}{+} & \cor{-}{-}{+}{-} & \cor{-}{-}{-}{+} & \cor{-}{-}{-}{-} \\
     \end{array} } \right]_{k,q,r,s} (\tau)\:I \\
-    &= \left[
-    {\begin{array}{cccc}
+    &= \left[\resizebox{\textwidth}{!}{
+    ${\begin{array}{cccc}
       \dscor{+}{+}{+}{+} & \dscor{+}{+}{+}{-} & \dscor{+}{+}{-}{+} & \dscor{+}{+}{-}{-} \\
       \dscor{+}{-}{+}{+} & \dscor{+}{-}{+}{-} & \dscor{+}{-}{-}{+} & \dscor{+}{-}{-}{-} \\
       \dscor{-}{+}{+}{+} & \dscor{-}{+}{+}{-} & \dscor{-}{+}{-}{+} & \dscor{-}{+}{-}{-} \\
       \dscor{-}{-}{+}{+} & \dscor{-}{-}{+}{-} & \dscor{-}{-}{-}{+} & \dscor{-}{-}{-}{-} \\
-    \end{array} }
+    \end{array} }$}
     \right]_{k,q,r,s} (\tau) \\
     &= \left[ 
     {\begin{array}{cccc}
@@ -215,12 +215,14 @@ Depending on what transformation we use to get back to $\langle phh^\dagger p^\d
 \subsubsection{\underline{$XF : H$}}
 
 \begin{equation}
+  \resizebox{\textwidth}{!}{%
+  $
   \begin{aligned}
     &C_{Q=0,S=1,S^3=-1;k,q,r,s}\\ 
     &= \frac{1}{Z}tr\left[p_kh_qe^{-H\tau}h^\dagger_rp^\dagger_se^{-H\left(\beta-\tau\right)}\right] \\
     &= \frac{1}{Z}tr\left[(XF)^{-1}(XF)p_k(XF)^{-1}(XF)h_q(XF)^{-1}(XF)e^{-H\tau}(XF)^{-1}(XF)h^\dagger_r(XF)^{-1}(XF)p^\dagger_s(XF)^{-1}(XF)e^{-H\left(\beta-\tau\right)}\right] \\
     &= \frac{1}{Z}tr\left[(\Sigma p)^\dagger_k(\Sigma h)^\dagger_qe^{-H\tau}(\Sigma h)_r(\Sigma p)_se^{-H\left(\beta-\tau\right)}\right]
-  \end{aligned}
+  \end{aligned}$}
 \end{equation}
 
 \renewcommand{\cor}[4]{p_{#1}h_{#2}h^\dagger_{#3}p^\dagger_{#4}}
@@ -238,13 +240,14 @@ Depending on what transformation we use to get back to $\langle phh^\dagger p^\d
       \cor{-}{-}{+}{+} & \cor{-}{-}{+}{-} & \cor{-}{-}{-}{+} & \cor{-}{-}{-}{-} \\
     \end{array}}
     \right]_{k,q,r,s} (\tau)\:\left(XF\right) \\
-    &= \left[ 
+    &= \left[\resizebox{\textwidth}{!}{%
+    $
     {\begin{array}{cccc}
       \dscor{+}{+}{+}{+} & \dscor{+}{+}{+}{-} & \dscor{+}{+}{-}{+} & \dscor{+}{+}{-}{-} \\
       \dscor{+}{-}{+}{+} & \dscor{+}{-}{+}{-} & \dscor{+}{-}{-}{+} & \dscor{+}{-}{-}{-} \\
       \dscor{-}{+}{+}{+} & \dscor{-}{+}{+}{-} & \dscor{-}{+}{-}{+} & \dscor{-}{+}{-}{-} \\
       \dscor{-}{-}{+}{+} & \dscor{-}{-}{+}{-} & \dscor{-}{-}{-}{+} & \dscor{-}{-}{-}{-} \\
-    \end{array}}
+    \end{array}}$}
     \right]_{k,q,r,s} (\tau) \\
     &= \left[ 
     {\begin{array}{cccc}
@@ -503,13 +506,14 @@ These identities show us that we can, average our data four fold only because we
       \cor{-}{-}{+}{+} & \cor{-}{-}{+}{-} & \cor{-}{-}{-}{+} & \cor{-}{-}{-}{-} \\
     \end{array}
     \right]_{k,q,r,s} (\tau) I = \\
-    &= \left[
+    &= \left[\resizebox{\textwidth}{!}{%
+    $
     \begin{array}{cccc}
       \dscor{+}{+}{+}{+} & \dscor{+}{+}{+}{-} & \dscor{+}{+}{-}{+} & \dscor{+}{+}{-}{-} \\
       \dscor{+}{-}{+}{+} & \dscor{+}{-}{+}{-} & \dscor{+}{-}{-}{+} & \dscor{+}{-}{-}{-} \\
       \dscor{-}{+}{+}{+} & \dscor{-}{+}{+}{-} & \dscor{-}{+}{-}{+} & \dscor{-}{+}{-}{-} \\
       \dscor{-}{-}{+}{+} & \dscor{-}{-}{+}{-} & \dscor{-}{-}{-}{+} & \dscor{-}{-}{-}{-} \\
-    \end{array}
+    \end{array}$}
     \right]_{k,q,r,s} (\tau) \\
     &= \left[ 
     {\begin{array}{cccc}
@@ -716,6 +720,8 @@ These identities show us that we can, average our data four fold only because we
 \subsubsection{$XF : H$}
 
 \begin{equation}
+  \resizebox{\textwidth}{!}{%
+  $
   \begin{aligned}
     &C_{Q=2,S=1,S^3=-1;k,q,r,s} = \frac{1}{Z}tr\left[p_kp_qe^{-H\tau}p^\dagger_rp^\dagger_se^{-H\left(\beta-\tau\right)}\right] = 
     \\
@@ -739,7 +745,7 @@ These identities show us that we can, average our data four fold only because we
     \\
     &= - \frac{1}{Z}tr\left[(\Sigma p)_r(\Sigma p)_se^{-H\left(\beta-\tau\right)}(\Sigma p)^\dagger_q(\Sigma p)^\dagger_ke^{-H\tau}\right]
     \\
-  \end{aligned}
+  \end{aligned}$}
 \end{equation}
 
 \renewcommand{\dscor}[4]{\left(\Sigma p\right)_{#1}^\dagger \left(\Sigma p\right)_{#2}^\dagger \left(\Sigma p\right)_{#3}\left(\Sigma p\right)_{#4}}
@@ -756,13 +762,14 @@ These identities show us that we can, average our data four fold only because we
       \cor{-}{-}{+}{+} & \cor{-}{-}{+}{-} & \cor{-}{-}{-}{+} & \cor{-}{-}{-}{-} \\
     \end{array}
     \right]_{k,q,r,s} (\tau) (XF) = \\
-    &= \left[
+    &= \left[\resizebox{\textwidth}{!}{%
+    $
     \begin{array}{cccc}
       \dscor{+}{+}{+}{+} & \dscor{+}{+}{+}{-} & \dscor{+}{+}{-}{+} & \dscor{+}{+}{-}{-} \\
       \dscor{+}{-}{+}{+} & \dscor{+}{-}{+}{-} & \dscor{+}{-}{-}{+} & \dscor{+}{-}{-}{-} \\
       \dscor{-}{+}{+}{+} & \dscor{-}{+}{+}{-} & \dscor{-}{+}{-}{+} & \dscor{-}{+}{-}{-} \\
       \dscor{-}{-}{+}{+} & \dscor{-}{-}{+}{-} & \dscor{-}{-}{-}{+} & \dscor{-}{-}{-}{-} \\
-    \end{array}
+    \end{array}$}
     \right]_{k,q,r,s} (\tau) \\
     &= \left[ 
     {\begin{array}{cccc}

@@ -6,31 +6,30 @@
 %==============================================================================
 \newcommand{\todo}[1]{\textbf{\color{red}TODO: #1}}
 
-In this chapter, we will explore the definition of an exciton, the Hubbard theory, and correlation functions of fermionic operators, which are a center point in this thesis.
+In this chapter, we will explore the definition of an exciton, the Hubbard theory, and correlation functions of fermionic operators, which are a center point of this thesis.
 
 \section{Excitons}
 % Terminology
-An exciton is a bound state of electron and hole. This neutral quasi-particle is bosoniclike, meaning that it can occupy the same excitonic ground state. These composite particles are theorized to be formed when the binding energy of the electron-hole pair is bigger than the band gap. This results in an unstable ground state against spontaneous exciton generation (\cref{fig:exciton_gap}). It is worth noting that the ground state instability is important because the so called excitonic insulator is a candidate for observing a Bose-Einstein condensation transition~\cite{grossnev}. The excitons remind of the Cooper pairs (bound state of spin-up and spin-down electrons) used in describing superconductivity. Similarly, they form below a critical temperature and impose a quasi-particle gap~\cite{ctubes}. Unlike the Cooper pairs, they do not transport charge or mass but only energy~\cite{grossnev}. 
+An exciton is a bound state of an electron and a hole. This neutral quasi-particle is bosonic-like, meaning that it can occupy the same excitonic ground state. These composite particles are theorized to be spontaneously formed when the binding energy of the electron-hole pair is larger than the band gap. This results in an unstable ground state against exciton generation (\cref{fig:exciton_gap}). It is worth noting that the ground state instability is important because the so-called excitonic insulator is a candidate for observing a Bose-Einstein condensation transition~\cite{grossnev}. The excitons remind of the Cooper pairs (bound state of spin-up and spin-down electrons), used in describing superconductivity. Similarly, they form below a critical temperature and impose a quasi-particle gap~\cite{ctubes}. Unlike the Cooper pairs, they do not transport charge or mass but only energy~\cite{grossnev}. 
 % put a Graphic here
 \begin{figure}[htbp]
-    \centerline{\includegraphics[width=0.35\linewidth]{exciton_gap.png}}
-    % \centerline{\includegraphics[width=0.7\linewidth]{band_structure.png}}
-    \caption{Excitonic instability in carbon nanotubes. The scheme represents the excitation energy $\epsilon_u$ of an electron-hole (e-h) pair relative to the noninteracting ground state, a zero-gap semiconductor. In the absence of interaction, the excitation energy $\epsilon_u$ of an e-h pair is positive. The long-range interaction may bind e-h pairs close to the Dirac point in the momentum space. If an exciton forms, then its excitation energy $\epsilon_u$ is negative. This instability leads to the reconstruction of the ground state into an excitonic insulator~\cite{ctubes}. (took the caption word-for-word)}
+    \centerline{\includegraphics[width=0.5\linewidth]{binding_exciton.pdf}}
+    \caption{The schematic illustration represents the binding energy $E_{\mathrm{bind}}$ of an electron-hole (e-h) pair relative to the band gap $E_{\mathrm{gap}}$. If the binding energy is larger than the band gap, an exciton spontaneously forms. This instability leads to the reconstruction of the ground state into an excitonic insulator.}
     \label{fig:exciton_gap}
 \end{figure}
 
 % Developments
-In recent years, there has been a renewed interest in investigating excitons due to their theoretically proposed applications in technology. These excitonic bound states are considered to be good candidates for the development of topologically protected qubits, switching devices, and in heat exchangers~\cite{graphapl1, graphapl2, graphapl3}. The properties of the exciton have been studied on a microscopic level by employing Hubbard-like Hamiltonians on graphene lattices~\cite{graphene1, graphene2} as well as the 3D thin-films topological insulators~\cite{graphene3, graphene4, graphene5}. There are other models (e.g. Gross-Neveu models) that have been used to describe excitons in semimetals and in semiconductors by studying the phase transitions between them and excitonic insulator. It has been shown that the dynamics of the bound electron-hole pair can be controlled in van der Waals heterostructures via a change of twist angle between the monolayers. These properties (most importantly the lifetimes of the excitons) can be tuned from the appearance of moiré potential, which in momentum space translates to relative rotation of both layer's Brillouin zones~\cite{twistangle}.
+In recent years, there has been a renewed interest in investigating excitons due to their theoretically proposed applications in technology. These excitonic bound states are considered to be good candidates for the development of topologically protected qubits, switching devices, and in heat exchangers~\cite{graphapl1, graphapl2, graphapl3}. The properties of the exciton have been studied on a microscopic level by employing Hubbard-like Hamiltonians on graphene lattices~\cite{graphene1, graphene2} as well as the 3D thin-films topological insulators~\cite{graphene3, graphene4, graphene5}. There are other models (e.g. Gross-Neveu models) that have been used to describe excitons in semimetals and in semiconductors by studying the phase transition to excitonic insulator. It has been shown that the dynamics of the bound electron-hole pair can be controlled in van der Waals heterostructures via a change of twist angle between the monolayers. These properties (most importantly the lifetimes of the excitons) can be tuned from the appearance of moiré potential, which in momentum space translates to relative rotation of both layer's Brillouin zones~\cite{twistangle}.
 % Simulations
 % On the lattice?
 % Different models for excitons
 
-In this work, we apply the Hubbard model onto a hexagonal lattice which is a model of graphene (see \cref{sec:lattice}). We are looking for the appearance of an electron-hole bound state. This will be done by measuring the binding energy of the correlation functions ratio
+In this work, we apply the Hubbard model onto a hexagonal lattice, which is a model of graphene (see \cref{sec:lattice}). We are looking for the appearance of an electron-hole bound state. This will be done by measuring the binding energy of the two-body correlation functions
 \begin{equation}
-    \Delta E = E_{e-h} - (E_e + E_h)
+    \Delta E = E_{e-h} - (E_e + E_h).
     \label{eq:binding_energy}
 \end{equation}
-The Hubbard model that we are applying does not have a mechanism for decay of the exciton state. This means that if the energy is negative ($\epsilon < 0$), we have a bound exciton state; and if the energy is higher than the energy threshold, then the particles are unbound. The study of a monolayer graphene sheets that we do in this thesis is a first step in the direction of future investigation of more complex graphene (and other) structures.
+The Hubbard model that we are applying does not have a mechanism for decay of the exciton state. This means that if the energy is negative ($\Delta E < 0$), we have a bound exciton state; and if the energy is higher than the energy threshold, then the particles are unbound. The study of a monolayer graphene sheets that we do in this thesis is a first step in the direction of future investigation of more complex graphene (and other) structures.
 
 \section{The Hubbard Model}
 
@@ -40,25 +39,25 @@ The Hubbard model (HM) emerges as a simple solution to the many-body problem in 
 % Original Hubbard model Hamiltonian (Tight-binding, interaction, Chemical potential)
 The tight-binding with on-site interaction Hamiltonian describes the hopping of the fermions between neighboring sites and the interaction of fermions
 \begin{equation}
-    H = - \sum_{xy} \left( a^\dagger_{x,\uparrow} K_{xy} a_{y,\uparrow} + a^\dagger_{x,\downarrow} K_{xy} a_{y,\downarrow} \right) - \frac{1}{2} \sum_{x,y} \left( (n^\dagger_{x,\uparrow} - n^\dagger_{x,\downarrow}) V_{xy} (n^\dagger_{y,\uparrow} - n^\dagger_{y,\downarrow}) \right)
+    H = - \sum_{xy} \left( a^\dagger_{x,\uparrow} K_{xy} a_{y,\uparrow} + a^\dagger_{x,\downarrow} K_{xy} a_{y,\downarrow} \right) - \frac{1}{2} \sum_{x,y} \left( (n^\dagger_{x,\uparrow} - n^\dagger_{x,\downarrow}) V_{xy} (n^\dagger_{y,\uparrow} - n^\dagger_{y,\downarrow}) \right),
 \end{equation}
-where the first term is the kinetic and the second is the interaction; $a^\dagger$, $a$ are the creation and annihilation operators respectively of electrons, $\uparrow$ is indicating spin-up and $\downarrow$ is spin-down, $K$ is called the hopping matrix which describes the hopping between sites, the interaction term is represented by the potential $V$, and $n_{x,s} = a^\dagger_{x,s} a_{x,s}$ is the electron number density operator. We can make a change of basis~\cite{avoiding}, such that particles are separated by spin and charge, which we call a particle-hole symmetry~\cite{phex1} (see \cref{sec:symmetries})
+where the first term is the kinetic and the second is the interaction; $a^\dagger$, $a$ are the creation and annihilation operators respectively of electrons, $\uparrow$ is indicating spin-up and $\downarrow$ is spin-down, $K$ is called the hopping matrix which describes the hopping between sites. The interaction term is represented by the potential $V$, and $n_{x,s} = a^\dagger_{x,s} a_{x,s}$ is the electron number density operator. We can make a change of basis~\cite{avoiding}, such that particles are separated by spin and charge, which we call a particle-hole symmetry~\cite{phex1} (see \cref{sec:symmetries})
 \begin{equation}
     \begin{aligned}
-        p^\dagger_x & \equiv a^\dagger_{x,\uparrow} \qquad\qquad h^\dagger_x & \equiv a_{x,\downarrow} \\
-        p_x & \equiv a_{x,\uparrow} \qquad\qquad h_x & \equiv a^\dagger_{x,\downarrow}
+        p^\dagger_x & \equiv a^\dagger_{x,\uparrow}, \qquad\qquad h^\dagger_x & \equiv a_{x,\downarrow}, \\
+        p_x & \equiv a_{x,\uparrow}, \qquad\qquad h_x & \equiv a^\dagger_{x,\downarrow},
     \end{aligned}
     \label{eq:ph-switch}
 \end{equation}
-where $p^\dagger (p)$, $h^\dagger (h)$ are the creation(annihilation) operators of particles and holes. Since these operators describe fermions, they respect the anti-commutation relations i.e. the Pauli exclusion principle
+where $p^\dagger (p)$, $h^\dagger (h)$ are the creation (annihilation) operators of particles and holes respectively. Since these operators describe fermions, they respect the anti-commutation relations i.e. the Pauli exclusion principle
 
 \begin{equation}
     \begin{aligned}
-        \{ p^\dagger_x, p_y \} &= \delta_{xy} &\{ h^\dagger_x, h_y \} = \delta_{xy}
+        \{ p^\dagger_x, p_y \} &= \delta_{xy}, &\{ h^\dagger_x, h_y \} = \delta_{xy},
         \\
-        \{ p_x, p_y \} &= \{ p^\dagger_x, p^\dagger_y \} = 0 &\{ h_x, h_y \} = \{ h^\dagger_x, h^\dagger_y \} = 0
+        \{ p_x, p_y \} &= \{ p^\dagger_x, p^\dagger_y \} = 0, &\{ h_x, h_y \} = \{ h^\dagger_x, h^\dagger_y \} = 0,
         \\
-        \{ p^\dagger_x, p_y \} &= \{ p^\dagger_x, h^\dagger_y \} = 0 \qquad\qquad &\{ p_x, h_y \} = \{ p_x, h^\dagger_y \} = 0
+        \{ p^\dagger_x, p_y \} &= \{ p^\dagger_x, h^\dagger_y \} = 0,\qquad\qquad &\{ p_x, h_y \} = \{ p_x, h^\dagger_y \} = 0.
         \\
     \end{aligned}
 \end{equation}
@@ -111,7 +110,7 @@ Finally, we can expand our Hamiltonian with one more term, which is called the c
 \end{equation}
 and we have introduced one more operator $q_x = n_{x,p} - n_{x,h}$. This is the charge operator that indicates the relative charge on each site. 
 
-The Hamiltonian of this model for our ease can be divided into two parts -- the half-filling part of the whole Hamiltonian and the chemical potential part. The former contains the kinetic and the interaction terms, whereas the latter in made out of only the chemical term. In the case of bipartite lattices (\cref{sec:lattice}), we must be able to differentiate on which lattice sites the operators are. This could be done by modifying the transformation (\cref{eq:ph-switch}) to include site dependent sign $\sigma_k$ for holes
+The Hamiltonian of this model for our ease can be divided into two parts -- the half-filling part of the whole Hamiltonian and the chemical potential part. The former contains the kinetic and the interaction terms, whereas the latter in made out of only the chemical term. In the case of bipartite lattices (\cref{sec:lattice}), we must be able to differentiate on which lattice sites the operators are. This could be done by modifying the transformation in \cref{eq:ph-switch} to include site dependent sign $\sigma_k$ for holes
 \begin{equation}
     H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y \right) + \frac{1}{2}\sum_{xy} q_x V_{xy} q_y - \sum_{x} \mu_x q_x.
 \end{equation}
@@ -121,7 +120,7 @@ To get to the Hamiltonian that we work with, we choose to have only contact inte
     H - \vec{\mu}\cdot\vec{q} = - \sum_{xy} \left( p^\dagger_x K_{xy} p_y + \sigma_k h^\dagger_x K_{xy} h_y \right) + \frac{U}{2}\sum_{xy} q^2_x - \sum_{x} \mu_x q_x.
     \label{eq:hubbard_ham}
 \end{equation}
-In this thesis work we sometimes work with the chemical potential, and sometimes we set $\mu = 0$, depending on the symmetries that we use \cite{avoiding}. On \cref{fig:hub_scheme} is shown a schematic of the Hubbard model's hopping and interaction.
+Sometimes we work with the chemical potential, and sometimes we set $\mu = 0$, depending on the symmetries that we use \cite{avoiding}. On \cref{fig:hub_scheme} is shown a schematic of the Hubbard model's hopping and interaction.
 \begin{figure}[h]
     \begin{center}
         \begin{tikzpicture}
@@ -153,9 +152,9 @@ In this thesis work we sometimes work with the chemical potential, and sometimes
     \end{center}
 \end{figure}
 % Problems
-The theory that we are working with as mentioned before is a model of the real physical systems. Even though the HM gives us good results, one must know some drawbacks of the model. One is that it neglects the long range part of the Coulomb forces. It is likely that significant effects are missed by this simplification~\cite{mott}. Another weakness of this model it has difficulties being applied to transition metals. And the Hubbard model cannot be exactly solved, so approximations must be used.
+The theory that we are working with as mentioned before is a model of the real physical systems. Even though the HM gives us good results, one must know some drawbacks of the model. One is that it neglects the long range part of the Coulomb forces. It is likely that significant effects are missed by this simplification~\cite{mott}. Another weakness of this model is that it has difficulties being applied to transition metals. Also, the Hubbard model cannot be exactly solved, so approximations must be used.
 
-Despite having these issues, the two-dimensional HM has showed promising results when applied to honeycomb lattices. The description of the electronic structure when applied resembles that of the carbon nanostructures, such as graphene, carbon nanotubes, and ribbons~\cite{graphhmc}.
+Despite having these issues, the two-dimensional HM has shown promising results when applied to honeycomb lattices. The description of the electronic structure when applied resembles that of the carbon nanostructures, such as graphene, carbon nanotubes, and ribbons~\cite{graphhmc}.
 % Examples of Hubbard model
 % Solutions to the model (Exact, not so exact)
 
@@ -172,17 +171,17 @@ where $k$ is the momentum mode and $\kappa$ is the hopping parameter. In \cref{f
     \caption{The noninteracting one-body spectrum on the honeycomb lattice. The BZ is shown as a black hexagon, while the red spheres are the momenta allowed on a $L_1 = 6$, $L_2 = 6$ lattice and the orange and blue spheres are the corresponding non-interacting energies~\cite{evan}.}
     \label{fig:two-band}
 \end{figure}
-
+When interaction with a coupling strength above a critical $U\approx3.85$~\cite{mott} is present, a band gap appears at the Dirac points. This is a phase transition between semimetal or semiconductor to insulator.
 
 \section{Correlation Functions}
 \label{sec:corr_func}
 
-The correlation functions (correlators) that we are interested in ($\langle \mathcal{O}_{x,t+\tau}\mathcal{O}^\dagger_{y,t} \rangle$), are called Euclidean correlators. They are defined as a thermal trace
+The correlation functions (correlators) that we are interested in $\left(\langle \mathcal{O}_{x,t+\tau}\mathcal{O}^\dagger_{y,t} \rangle\right)$, are called Euclidean correlators. They are defined as a thermal trace
 \begin{equation}
     \langle \mathcal{O}_{x,t+\tau}\mathcal{O}_{y,t} \rangle = \frac{1}{\mathcal{Z}}tr\left[ \mathcal{O}_{x,t+\tau}\mathcal{O}_{y,t}\mathrm{e}^{-\beta H} \right],
     \label{eq:corr_trerm}
 \end{equation}
-where the $\mathcal{O}$ operators could be operators that create or annihilate states (usually the adjoint operator creates the anti-state), measure observables, or a combination of these; the labels $x$ and $y$ are there to indicate any set of labels, not just a position, $\mathcal{Z} = tr\left[ \mathrm{e}^{-\beta H} \right]$ is the partition function, $\beta$ is the inverse temperature, and $H$ is a general Hamiltonian of a model. In our case model, the field operators create states with a set of quantum numbers that define it at some time $t$ and destroy the same states at a different time $t + \tau$. These operators can also be composite $\mathcal{O} = \mathcal{O'}_1\mathcal{O'}_2\hdots\mathcal{O'}_n$. We can make a time transformation (assuming the action is time-translation invariant), such that the source is at time zero and the sink is at time $\tau$. Then, we move to the Heisenberg picture, so the correlator becomes
+where the operators $\mathcal{O}$ could be operators that create or annihilate states (usually the adjoint operator creates the anti-state), measure observables, or a combination of these; the labels $x$ and $y$ are there to indicate any set of labels, not just a position, $\mathcal{Z} = tr\left[ \mathrm{e}^{-\beta H} \right]$ is the partition function, $\beta$ is the inverse temperature, and $H$ is a general Hamiltonian of a model. In our case model, the field operators create states with a set of quantum numbers that define it at some time $t$ and destroy the same states at a different time $t + \tau$. These operators can also be composite $\mathcal{O} = \mathcal{O'}_1\mathcal{O'}_2\hdots\mathcal{O'}_n$. We can make a time transformation (assuming the action is time-translation invariant), such that the source is at time zero and the sink is at time $\tau$. Then, we move to the Heisenberg picture, so the correlator becomes
 \begin{equation}
     C_{xy}(\tau) := \langle \mathcal{O}_{x,\tau}\mathcal{O}_{y,0} \rangle = \frac{1}{\mathcal{Z}}tr\left[ \mathcal{O}_{x,\tau}\mathrm{e}^{-H\tau}\mathcal{O}_{y,0}\mathrm{e}^{-H(\beta - \tau)} \right]
 \end{equation}
@@ -219,18 +218,18 @@ where $\Delta E_n = E_n - E_\Omega$, and $\Omega$ denotes the lowest energy stat
 
 Another way to express the two-point correlator is by transforming (\cref{eq:corr_trerm}) to a Euclidean path integral~\cite{discret1,discret2}. We start with representing the two-point correlation function as a path integral
 \begin{equation}
-    \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle = \frac{1}{Z} \int \mathcal{D}\psi\mathcal{D}\eta e^{-(\psi_\alpha\psi^*_\alpha + \eta_\alpha\eta^*_\alpha)} \langle -\psi,-\eta | \mathcal{O}_x\mathcal{O}^\dagger_y e^{-\beta H} | \psi,\eta \rangle
+    \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle = \frac{1}{Z} \int \mathcal{D}\psi\mathcal{D}\eta e^{-(\psi_\alpha\psi^*_\alpha + \eta_\alpha\eta^*_\alpha)} \langle -\psi,-\eta | \mathcal{O}_x\mathcal{O}^\dagger_y e^{-\beta H} | \psi,\eta \rangle.
 \end{equation}
 Assuming $\beta$ to be a time extent, thus we can discretize it by separating it in small segments $\delta$
 \begin{equation}
-    e^{-\beta H} = e^{-\delta H}e^{-\delta H}\dots e^{-\delta H}\qquad(\delta = \frac{\beta}{Nt})
+    e^{-\beta H} = e^{-\delta H}e^{-\delta H}\dots e^{-\delta H}\qquad(\delta = \frac{\beta}{Nt}).
 \end{equation}
 Moreover, we want to discretize the Hamiltonian (\cref{eq:hubbard_ham}). Due to fermions obeying anti-commutation relations, we must use Grassman variables and the Hubbard-Stratonovich transformations to obtain
 \begin{equation}
     \begin{aligned}
         C_{xy}(\tau) = \langle \mathcal{O}_x\mathcal{O}^\dagger_y \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-\frac{\phi^2_t}{2\delta U}}\times \det(M[\phi])\det(M[-\phi]) \left(\mathcal{O}_x\mathcal{O}^\dagger_y\right)_{Wick}
         \\
-        &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(\mathcal{O}_x\mathcal{O}^\dagger_y\right)_{Wick}
+        &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(\mathcal{O}_x\mathcal{O}^\dagger_y\right)_{Wick},
     \end{aligned}
     \label{eq:path-int}
 \end{equation}
@@ -242,7 +241,7 @@ $\mathcal{Z}$ is the partition function defined as
 \begin{equation}
     \mathcal{Z} = \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]};
 \end{equation}
-the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) \cite{gattringer}. As this is very important to the part where we generate data, we will explicitly work out the examples with which will work -- one for a one-body correlation function and the other two for a two-body correlator with one and two Wick contractions.
+the label $Wick$ indicates that all possible Wick contractions must be performed on the operators, where each term is a product of inverse fermion matrices ($M^{-1}$) \cite{gattringer}. As this is very important to the part where we generate data, we will explicitly work out the examples that we use -- one for a one-body correlation function and the other two for a two-body correlator with one and two Wick contractions.
 
 \begin{itemize}
     \item \textbf{One-body correlation function}\\
@@ -257,7 +256,7 @@ the label $Wick$ indicates that all possible Wick contractions must be performed
     where $x$,$y$ denote the position of the particle and $M[\phi]$ is the fermion matrix. The same derivation can be performed for $\langle h_xh^\dagger_y\rangle$.
     
     \item \textbf{Two-body correlation function}\\
-    In this example, we want to show what the Wick contractions are for composite operators. We start again by substituting the general operators from (\cref{eq:path-int}) with $pp$ and the adjoint. Then, we expand the $\left(\dots\right)_{Wick}$, and finally we substitute $M[\phi]^{-1}$ in each term
+    In this example, we want to show what the Wick contractions are for composite operators. We start again by substituting the general operators from \cref{eq:path-int} with $pp$ and the adjoint. Then, we expand the $\left(\dots\right)_{Wick}$, and finally we substitute $M[\phi]^{-1}$ in each term
     \begin{equation}
         \begin{aligned}
             \langle p_{1,x}p_{2,x'}p^\dagger_{3,y}p^\dagger_{4,y'} \rangle &= \frac{1}{\mathcal{Z}} \int \mathcal{D}\phi \:\mathrm{e}^{-S[\phi]}\times \left(p_{1,x}p_{2,x'}p^\dagger_{3,y}p^\dagger_{4,y'}\right)_{Wick} 

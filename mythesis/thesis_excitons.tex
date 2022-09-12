@@ -4,7 +4,7 @@
 \chapter{Spectrum of Excitons}
 \label{sec:excitons}
 %==============================================================================
-In this chapter, we will discuss the algorithm that was created and used to find the correlation functions, and finally the results for the binding energy of the particle-hole pair. We will discuss what is potentially the physical meaning behind the results we have obtained.
+In this chapter, we will discuss the algorithm that was created and used to find the correlation functions, and finally the results for the binding energy of the particle-hole pair. We will discuss what is potentially the physical meaning behind the results, we have obtained.
 
 \section{Data Generating}
 
@@ -12,9 +12,9 @@ The data gathering is done by the use of an algorithm which was developed specif
 
 The algorithm takes as an input a set of momenta and $\phi$ fields. The latter are generated independently using the HMC method of sampling. The reasons for this separation is due to the computational cost of generating these fields, to be able to cross-check the results by using the same values, and for multiple uses for calculating other observables. After the input, the program computes the operators which construct the correlation functions for all possible combinations of momenta ($k$) and bands labels ($\sigma$), both at the source ($t=0$) and at the sink ($t=\tau$), as well as for particles and holes
 \begin{equation}
-    \mathcal{O}[\pm\phi] = {\psi^{k\sigma_{sink}}_{y}}^{*}M^{-1}_{\tau,y;0,x}[\pm\phi]\psi^{q\sigma_{scr}}_{x} = M^{-1}_{k\sigma_{sink};q\sigma_{scr}}[\pm\phi]
+    \mathcal{O}[\pm\phi] = {\psi^{k\sigma_{sink}}_{y}}^{*}M^{-1}_{\tau,y;0,x}[\pm\phi]\psi^{q\sigma_{scr}}_{x} = M^{-1}_{k\sigma_{sink};q\sigma_{scr}}[\pm\phi].
 \end{equation}
-This is done by computing a propagator from the source ($M^{-1}_{\tau,y;0,x}\psi^{q\sigma_{scr}}_{x}$) using FGMRES and then multiplying it with the sink. After the "pool" of all fermionic operators is completed. The code applies the physics constraints on the whole data set which tells how to draw the correlation functions from it. In the one-body case the constraint is the momentum conservation at the source and sink, meaning the momenta should be equal ($k=q$). In the two-body case, we have two kinds of correlators. The particle-hole pair correlation function ($\langle phh^\dagger p^\dagger\rangle$) and the particle-particle pair ($\langle ppp^\dagger p^\dagger\rangle$). The first can be extracted by giving again constraint on the momentum at the source and at the sink; not on the individual momenta but on the total momentum, resulting in a lot more different combination of indices and labels. The other correlator that we want to extract, is more difficult to do so, because not only we have to apply the total momentum conservation but to take into account the additional Wick contractions. The basic flowchart of the algorithm is shown on \cref{fig:alg_flow}.
+This is done by computing a propagator from the source ($M^{-1}_{\tau,y;0,x}\psi^{q\sigma_{scr}}_{x}$) using FGMRES and then multiplying it with the sink. After the "pool" of all fermionic operators is completed, the code applies the physics constraints on the whole data set which tells how to draw the correlation functions from it. In the one-body case the constraint is the momentum conservation at the source and sink, meaning the momenta should be equal ($k=q$). In the two-body case, we have two kinds of correlators. The particle-hole pair correlation function $\langle phh^\dagger p^\dagger\rangle$ and the particle-particle pair $\langle ppp^\dagger p^\dagger\rangle$. The first can be extracted by giving again constraint on the momentum at the source and at the sink; not on the individual momenta but on the total momentum, resulting in a lot more different combination of indices and labels. The other correlator that we want to extract, is more difficult to do so, because not only we have to apply the total momentum conservation but to take into account the additional Wick contractions. The basic flowchart of the algorithm is shown on \cref{fig:alg_flow}.
 \begin{figure}[!htbp]
     \begin{center}
       % \scalebox{0.66}{
@@ -65,12 +65,12 @@ The raw output of the program is written into a different ASCII file for each co
 An important aspect to the data gathering is the available storage. Before we even start generating data, we must think about what is reasonable with today's technology and project space. Our algorithm's data output in terms of memory scales quite poorly
 \begin{equation}
     \begin{aligned}
-        Scaling \sim \#momenta^{4} \times \left( \#Nt \times \#configs \right),
+        Scaling \sim \#momenta^{4} \times \left( \#N_t \times \#configs \right),
     \end{aligned}
 \end{equation}
 where the number of momenta ($\#momenta$) governs the number of files and the other the file size. Therefore, we must be careful with the number of momenta.
 
-For this thesis work, we have generated a number of ensembles with $1000 \div  4000$ configurations per ensemble, using JURECA supercomputer at Jülich Supercomputing Center \todo{CITE JURECA}. We could extrapolate to the continuum limit with all of them but only a few can reach the other limits afterwards. There are too few points to extrapolate using the rest. Thus, we use only this subset of all ensembles, which has enough to reach both limits. Note that there is also a subset of generated ensembles that can reach the zero-temperature limit at a finite lattice size. In the future, we can expand the list of ensembles so that we can reach these three limits simultaneously. We will the ensembles shown in \cref{tab:work_ensembles} for fitting because they can be used to reach more than just the continuum limit.
+For this thesis work, we have generated a number of ensembles with $1000 \sim  4000$ configurations per ensemble, using JURECA supercomputer at Jülich Supercomputing Centre~\cite{jureca}. We could extrapolate to the continuum limit with all of them but only a few can reach the other limits afterwards. There are too few points to extrapolate using the rest. Thus, we use only this subset of all ensembles, which has enough to reach both limits. Note that there is also a subset of generated ensembles that can reach the zero-temperature limit at a finite lattice size. In the future, we can expand the list of ensembles so that we can reach these three limits simultaneously. We will the ensembles shown in \cref{tab:work_ensembles} for fitting because they can be used to reach more than just the continuum limit.
 
 \begin{table}[!htb]
   % \small
@@ -270,7 +270,7 @@ and then the two-body correlator energy by fitting
   f(t) = A\cosh\left(E_0\left(t-\frac{\beta}{2}\right)\right) + C,
     \label{eq:cosh2}
 \end{equation}
-where $A, E_0, C$ are fit parameters for amplitude, ground energy, and a constant that describes the backward propagating. Note that we are only extracting the ground state energies with these fits. We have tried to add one excited state to the fit, but Python's \textit{curve\_fit} function could not converge at any reasonable maximum step count. Therefore, we should be careful about the range of data points when performing the fits, since we do want to use data only with dominant ground state. We obtain $\Delta E_0$ after subtracting the one- and two-body energies.
+where $A, E_0, C$ are fit parameters for amplitude, ground energy, and a constant that describes the backward propagating. Note that we are only extracting the ground state energies with these fits. We have tried to add one excited state to the fit, but Python's \textit{curve\_fit} function could not converge at any reasonable maximum step count. Therefore, we should be careful about the range of data points when performing the fits, since we do want to use data only with dominant ground state. We obtain $\Delta E_0$ after subtracting the one-body energies from the two-body.
 
 \begin{figure}[!htbp]
     \begin{subfigure}{.5\textwidth}
@@ -309,7 +309,7 @@ After we have the continuum limit for every lattice size, we can again extrapola
   \label{fig:u3vol}
 \end{figure}
 
-The results for $\Delta E_{phhp}$ and $\Delta E_{pppp}$ at $V\to\infty$ show a small scaling when extrapolating of the infinite volume. This means that we can fit and extrapolate our data to the continuum limit followed by the zero temperature limit at finite volume. We can assume that the result we get, is in the vicinity of the true value, but with an extra added systematic error. From the available ensembles (\cref{tab:work_ensembles}), we could not only get results for $U=3.0$ but also for $U=4.0$, which is on the other side of the critical coupling $U\approx 3.85$~\cite{mott}. Correlation functions for $\beta = 3.0$ are omitted when performing the zero-temperature approximation because they have proved too noisy and the extracted energy is unreliable. All plots reaching the continuum limit are shown in \cref{app:limit} (\crefrange{fig:fig11}{fig:fig20}). Here, we will show only the final extrapolations for both correlation functions at both couplings and irreducible representations.  
+The results for $\Delta E_{phhp}$ and $\Delta E_{pppp}$ at $V\to\infty$ show a small scaling when extrapolating of the infinite volume. This means that we can fit and extrapolate our data to the continuum limit followed by the zero temperature limit at finite volume. We can assume that the result we get, is in the vicinity of the true value, but with an extra added systematic error. From the available ensembles (\cref{tab:work_ensembles}), we could not only get results for $U=3.0$ but also for $U=4.0$, which is on the other side of the critical coupling $U_{crit}\approx 3.85$. Correlation functions for $\beta = 3.0$ are omitted when performing the zero-temperature approximation because they have proved too noisy and the extracted energy is unreliable. All plots reaching the continuum limit are shown in \cref{app:limit} (\crefrange{fig:fig11}{fig:fig20}). Here, we will show only the final extrapolations for both correlation functions at both couplings and irreducible representations.  
 \begin{figure}[!htbp]
     \begin{subfigure}{.5\textwidth}
       \centering
